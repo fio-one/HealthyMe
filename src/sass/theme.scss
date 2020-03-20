@@ -1,6 +1,19 @@
 @import "base";
 @import "flexboxgrid";
 
+//mixin
+@mixin border-radius($radius: 1px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+          border-radius: $radius;
+}
+@mixin placeholder {
+    &::-webkit-input-placeholder {@content}
+    &:-moz-placeholder           {@content}
+    &::-moz-placeholder          {@content}
+    &:-ms-input-placeholder      {@content}  
+}
+
 .visible-xs, .visible-sm {
   display: none !important;
 }
@@ -28,7 +41,7 @@ body {
 	margin: 0;
   font-size: $m-font;
   line-height: 1.4;
-	color: #6a6a6a;
+	color: $base-color;
   position: relative;
   -webkit-overflow-scrolling: touch;
   &.lang-ch {
@@ -36,7 +49,149 @@ body {
   }
 }
 
+.container {
+  margin: 0 auto;
+  padding: 30px;
+}
 
+//status-bg
+.status-bg-success {
+  background: rgba($success-color, .2);
+}
+.status-bg-warning {
+  background: rgba($warning-color, .2);
+}
+.status-bg-danger {
+  background: rgba($danger-color, .2);
+}
+
+//button
+.btn {
+  @include border-radius(4px);
+  padding: 12px 16px;
+  color: #FFF;
+  box-shadow: none;
+  margin-bottom: 4px;
+  background: $base-color;
+  border: 1px solid $base-color;
+  &:hover {
+    background: rgba($base-color, .8);
+  }
+}
+
+.btn-primary {
+  @extend .btn;
+  background: $primary-color;
+  border: 1px solid $primary-color;
+  &:hover {
+    background: rgba($primary-color, .8);
+  }
+}
+.btn-success {
+  @extend .btn;
+  background: $success-color;
+  border: 1px solid $success-color;
+  &:hover {
+    background: rgba($success-color, .8);
+  }
+}
+.btn-danger {
+  @extend .btn;
+  background: $danger-color;
+  border: 1px solid $danger-color;
+  &:hover {
+    background: rgba($danger-color, .8);
+  }
+}
+.btn-warning {
+  @extend .btn;
+  background: $warning-color;
+  border: 1px solid $warning-color;
+  &:hover {
+    background: rgba($warning-color, .8);
+  }
+}
+
+//alert
+.alert {
+  @include border-radius(8px);
+  padding: 12px 16px;
+  background: $primary-color;
+  color: #FFF;
+  margin-bottom: 12px;
+
+  &.success {
+    background: $success-color;
+  }
+  &.danger {
+    background: $danger-color;
+  }
+  &.warning {
+    background: $warning-color;
+  }
+  // .closebtn {
+  //   margin-left: 15px;
+  //   color: #FFF;
+  //   font-weight: bold;
+  //   float: right;
+  //   font-size: 22px;
+  //   line-height: 20px;
+  //   cursor: pointer;
+  //   transition: 0.3s;
+  //   &:hover {
+  //     color: black;
+  //   }
+  // }
+
+}
+
+//table
+table {
+    white-space: nowrap;
+    background: transparent;
+    margin: 0;
+    color: $base-color;
+    border: none;
+    border-collapse: collapse;
+    font-size: $s-font;
+    line-height: 40px;
+    thead th {
+      border-bottom: solid 1px #cfcfd0;
+      padding: 20px 16px;
+      color: $base-color;
+      font-weight: bold;
+    }
+    th, td {
+      border: none;
+      border-bottom: solid 1px #cfcfd0;
+      padding: 20px 16px;
+    }
+}
+
+.block {
+  padding: 30px;
+}
+.block-title {
+  font-size: $xl-font;
+  font-weight: bold;
+  margin: 8px 0;
+}
+.block-info {
+  font-size: $m-font;
+}
+.num-block {
+  text-align: center;
+  border: 1px solid $base-color;
+
+  .title {
+    font-size: $s-font;  
+  }
+  .num {
+    font-size: $xxl-font;
+    font-weight: bold;
+    margin: 16px 0;
+  }
+}
 
 @import "mobile";
 @import "tablet";

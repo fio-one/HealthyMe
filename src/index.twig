@@ -4,7 +4,93 @@
 	{% include 'partial/header.twig' %}
 	{% include 'partial/lib.twig' %}
 </head>
-<body class="lang-{{ htmlWebpackPlugin.options.data.lang }}">
-	<p>FiO Health</p>
-</body>
+<body class="lang-{{ htmlWebpackPlugin.options.data.lang }}"><div class="container">
+	{# dashboard #}
+	<div class="row">
+		<div class="col-md-12">
+			<div class="alert success">This is an alert box.</div>
+			<div class="alert warning">This is an alert box.</div>
+			<div class="alert danger">This is an alert box.</div>
+		</div>
+	</div>
+	<p class="block-title">Number<span class="float-right block-info">Last Update: 2020-03-20 19:00:00</span></p>
+	<div class="row">
+		<div class="col-md-4"><div class="block num-block">
+			<p class="title">Total</p>
+			<p class="num">70</p>
+		</div></div>
+		<div class="col-md-4"><div class="block num-block">
+			<p class="title">Done</p>
+			<p class="num">60</p>
+		</div></div>
+		<div class="col-md-4"><div class="block num-block">
+			<p class="title">Wait</p>
+			<p class="num">10</p>
+		</div></div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<p class="block-title">Status</p>
+			<div class="block status-bg-success">
+				<p>Clear</p>
+			</div>
+			<div class="block status-bg-warning">
+				<p>Warning</p>
+			</div>
+			<div class="block status-bg-danger">
+				<p>Danger</p>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<p class="block-title">Log</p>
+			{# table #}
+			<table>
+		    	<thead>
+		    		<tr>
+		    			<th>ID</th>
+		    			<th>Name</th>
+		    			<th>Date</th>
+		    			<th>Num</th>
+		    			<th>Action</th>
+		    		</tr>
+		    	</thead>
+		    	<tbody>
+		    		<tr>
+		    			<td>1</td>
+		    			<td>Denny Wang</td>
+		    			<td>2020-03-20 19:00:00</td>
+		    			<td>4</td>
+		    			<td>
+		    				<button class="btn">Log</button>
+		    				<button class="btn-primary">Export</button>
+		    				<button class="btn-success">Success</button>
+		    				<button class="btn-warning">Warning</button>
+		    				<button class="btn-danger">Danger</button>
+		    			</td>
+		    		</tr>
+		    		<tr>
+		    			<td>2</td>
+		    			<td>Denny Wang</td>
+		    			<td>2020-03-20 19:00:00</td>
+		    			<td>4</td>
+		    			<td>
+		    				<button class="btn-primary">Log</button>
+		    				<button class="btn-primary">Export</button>
+		    			</td>
+		    		</tr>
+		    		<tr>
+		    			<td>3</td>
+		    			<td>Denny Wang</td>
+		    			<td>2020-03-20 19:00:00</td>
+		    			<td>4</td>
+		    			<td>
+		    				<button class="btn-primary">Log</button>
+		    				<button class="btn-primary">Export</button>
+		    			</td>
+		    		</tr>
+		    	</tbody>
+		    </table>
+		</div>
+	</div>
+</div></body>
 </html>
