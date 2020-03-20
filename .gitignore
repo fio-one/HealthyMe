@@ -1,0 +1,12 @@
+# Mac OS X Desktop Services Store
+.DS_Store
+
+# Build Folders
+/[Dd]ist/
+/[Vv]endor/
+
+# Composer Lock File
+composer.lock
+
+# Node JS Folder
+node_modules/
