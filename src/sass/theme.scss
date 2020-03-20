@@ -1,0 +1,42 @@
+@import "base";
+@import "flexboxgrid";
+
+.visible-xs, .visible-sm {
+  display: none !important;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.clearfix {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}
+.blur {
+  filter: blur(2px);
+}
+
+body {
+	font-family: 'Montserrat', serif;
+	text-align: left;
+	margin: 0;
+  font-size: $m-font;
+  line-height: 1.4;
+	color: #6a6a6a;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+  &.lang-ch {
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+}
+
+
+
+@import "mobile";
+@import "tablet";

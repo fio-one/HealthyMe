@@ -1,0 +1,49 @@
+//color
+
+//font
+$xs-font: 14px;
+$s-font: 16px;
+$m-font: 18px;
+$l-font: 20px;
+$xl-font: 24px;
+$xxl-font: 36px;
+
+h1, h2, h3, h4, h5, h6, p, span {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+  &:hover, &:focus , &:active {
+    outline: none !important;
+    text-decoration: none;
+  }
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+::-webkit-input-placeholder, :-moz-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
+  font-weight: normal;
+}
+
+button {
+  outline: none !important;
+  box-shadow: none;
+  &:focus, &:active {
+    outline: none !important;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,14 @@
+//mobile
+@media (max-width: 768px) {
+	.visible-xs {
+		display: block !important;
+	}
+	.hidden-xs {
+		display: none !important;
+	}
+}
+
+/* Landscape */
+@media (max-width: 768px) and (orientation: landscape) {
+  	
+}
