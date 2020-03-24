@@ -18,6 +18,12 @@
   display: none !important;
 }
 
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
 .float-left {
   float: left;
 }
@@ -100,6 +106,7 @@ body {
   padding: 70px;
 
   h1 {
+    text-align: center;
     color: #009389;
     margin-bottom: 45px;
   }
@@ -125,7 +132,7 @@ body {
 .status-dot {
   font-size: $m-font;
   display: inline-block;
-
+  margin-top: 6px;
   &.wait {
     color: $base-color;
   }
@@ -159,6 +166,47 @@ body {
 }
 
 
+.form-group {
+  margin: 12px 0;
+  .form-control {
+    @include border-radius(5px);
+    padding: 8px 12px;
+    line-height: 30px;
+    border: 1px solid $base-color;
+    background: #FFF;
+    color: $base-color;
+    width: 93%;
+  }
+  &.has-error {
+    .form-control {
+      border-color: $danger-color;
+    }
+    .invalid-feedback {
+      display: block;
+    }
+  }
+  .invalid-feedback {
+    color: $danger-color;
+    display: none;
+    font-size: $s-font;
+  }
+}
+
+.auth-form {
+  .text-link {
+    font-size: $s-font;
+    color: $base-color;
+    &:hover {
+      color: $base-color;
+      text-decoration: underline;
+    }
+  }
+  .submit-area {
+    margin: 16px auto;
+    text-align: center;
+  }
+}
+
 
 //status-bg
 .status-bg-success {
@@ -181,6 +229,7 @@ body {
   background: $base-color;
   border: 1px solid $base-color;
   &:hover {
+    cursor: pointer;
     background: rgba($base-color, .8);
   }
 }
@@ -252,27 +301,41 @@ body {
 }
 
 //table
-table {
-    white-space: nowrap;
-    background: transparent;
-    margin: 0;
-    color: $base-color;
-    border: none;
-    border-collapse: collapse;
-    font-size: $s-font;
-    line-height: 40px;
-    thead th {
-      border-bottom: solid 1px #cfcfd0;
-      padding: 20px 16px;
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 700px; //todo
+  table {
+      width: 100%;
+      display: table;
+      white-space: nowrap;
+      background: transparent;
+      margin: 0;
       color: $base-color;
-      font-weight: bold;
-    }
-    th, td {
       border: none;
-      border-bottom: solid 1px #cfcfd0;
-      padding: 20px 16px;
-    }
+      border-collapse: collapse;
+      font-size: $s-font;
+      line-height: 40px;
+      thead th {
+        border-bottom: solid 1px #cfcfd0;
+        padding: 20px 16px;
+        color: $base-color;
+        font-weight: bold;
+      }
+      tr {
+        display: table-row;
+      }
+      th, td {
+        border: none;
+        border-bottom: solid 1px #cfcfd0;
+        padding: 20px 16px;
+      }
+  }
 }
+
 
 .block-title {
   font-size: $xl-font;

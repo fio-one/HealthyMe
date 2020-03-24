@@ -4,63 +4,116 @@
 	{% include 'partial/header.twig' %}
 	{% include 'partial/lib.twig' %}
 </head>
-<body class="lang-{{ htmlWebpackPlugin.options.data.lang }}"><div class="container-fluid">
+<body class="lang-{{ htmlWebpackPlugin.options.data.lang }}"><div class="row">
 	{# dashboard #}
-	<div class="row">
-		<div class="col-md-6 center-flexbox info-container">
-			<div class="info-container-inner">
-				<div class="info-block">
-					<p>Call 911 if you have a medical emergency: If you have a medical emergency and need to call 911, notify the operator that you have or think you might have, COVID-19. If possible, put on a facemask before medical help arrives.</p>
-				</div>
-				<div class="fio-block">
-					<a href="#" class="logo"><img src="image/logo-white.svg"></a>
-					<p>the Building Block of your Future</p>
-					<p>Email: <a href="mailto:info@fio.one">info@fio.one</a></p>
-				</div>
+	<div class="col-md-5 center-flexbox info-container"><div class="info-container-inner">
+		<div class="info-block">
+			<p>Call 911 if you have a medical emergency: If you have a medical emergency and need to call 911, notify the operator that you have or think you might have, COVID-19. If possible, put on a facemask before medical help arrives.</p>
+		</div>
+		<div class="fio-block">
+			<a href="#" class="logo"><img src="image/logo-white.svg"></a>
+			<p>the Building Block of your Future</p>
+			<p>Email: <a href="mailto:info@fio.one">info@fio.one</a></p>
+		</div>
+	</div></div>
+	<div class="col-md-7 center-flexbox num-container"><div class="num-container-inner">
+		<h1>Health Management</h1>
+		{# login #}
+		<div class="row center-xs"><div class="col-md-10 auth-form">
+            <div class="form-group has-error">
+              <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require/>
+              <div class="invalid-feedback text-right">Please enter your username.</div>
+            </div>
+            <div class="clearfix">
+                <a href="#" class="text-link text-right float-right">No account? Register here</a>
+                <a href="#" class="text-link text-left float-left">Forgot Password</a>
+            </div>
+            <div class="submit-area">
+                <button class="btn btn-primary submit-btn" type="button">Login</button>
+            </div>
+		</div></div>
+		{# num #}
+		<div class="row center-xs">
+			<div class="col-md-10"><div class="num-block clearfix">
+				<p class="title">Number Of People Filling Out Today</p>
+				<p class="num">70</p>
+				<span class="float-right status-dot wait"><i class="fas fa-circle"></i></span>
+			</div></div>
+			<div class="col-md-10"><div class="num-block clearfix">
+				<p class="title">Healthy People</p>
+				<p class="num">60</p>
+				<span class="float-right status-dot success"><i class="fas fa-circle"></i></span>
+			</div></div>
+			<div class="col-md-10"><div class="num-block clearfix">
+				<p class="title">One Or Two Symptoms</p>
+				<p class="num">10</p>
+				<span class="float-right status-dot warning"><i class="fas fa-circle"></i></span>
+			</div></div>
+			<div class="col-md-10"><div class="num-block clearfix">
+				<p class="title">More Than Three Symptoms</p>
+				<p class="num">10</p>
+				<span class="float-right status-dot danger"><i class="fas fa-circle"></i></span>
+			</div></div>
+		</div>
+		{# log #}
+		<div class="row"><div class="col-md-12"><div class="table-responsive"><table>
+	    	<thead>
+	    		<tr>
+	    			<th>ID</th>
+	    			<th>Name</th>
+	    			<th>Date</th>
+	    			<th>Num</th>
+	    			<th>Action</th>
+	    		</tr>
+	    	</thead>
+	    	<tbody>
+	    		<tr>
+	    			<td>1</td>
+	    			<td>Denny Wang</td>
+	    			<td>2020-03-20 19:00:00</td>
+	    			<td>4</td>
+	    			<td>
+	    				<button class="btn">Log</button>
+	    				<button class="btn-primary">Export</button>
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td>2</td>
+	    			<td>Denny Wang</td>
+	    			<td>2020-03-20 19:00:00</td>
+	    			<td>4</td>
+	    			<td>
+	    				<button class="btn">Log</button>
+	    				<button class="btn-primary">Export</button>
+	    			</td>
+	    		</tr>
+	    		<tr>
+	    			<td>3</td>
+	    			<td>Denny Wang</td>
+	    			<td>2020-03-20 19:00:00</td>
+	    			<td>4</td>
+	    			<td>
+	    				<button class="btn">Log</button>
+	    				<button class="btn-primary">Export</button>
+	    				<button class="btn-primary">Export</button>
+	    				<button class="btn-primary">Export</button>
+	    				<button class="btn-primary">Export</button>
+	    				<button class="btn-primary">Export</button>
+	    			</td>
+	    		</tr>
+	    	</tbody>
+		</table></div></div></div>
+		{# contact #}
+		<div class="clearfix">
+			<div class="float-right link-group-block">
+				<ul>
+					<li><a href="https://www.facebook.com/FiO.ONE.EN/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+					<li><a href="mailto:info@fio.one" target="_blank"><i class="fas fa-envelope"></i></a></li>
+				</ul>
 			</div>
 		</div>
-		<div class="col-md-6 center-flexbox num-container">
-			<div class="num-container-inner">
-				<h1>Health Management</h1>
-				{# num #}
-				<div class="row">
-					<div class="col-md-12"><div class="num-block clearfix">
-						<p class="title">
-							Number Of People Filling Out Today
-							<span class="float-right status-dot wait"><i class="fas fa-circle"></i></span>
-						</p>
-						<p class="num">70</p>
-						<p class="text-help">information</p>
-					</div></div>
-					<div class="col-md-12"><div class="num-block clearfix">
-						<p class="title">Healthy People</p>
-						<p class="num">60</p>
-						<span class="float-right status-dot success"><i class="fas fa-circle"></i></span>
-					</div></div>
-					<div class="col-md-12"><div class="num-block clearfix">
-						<p class="title">One Or Two Symptoms</p>
-						<p class="num">10</p>
-						<span class="float-right status-dot warning"><i class="fas fa-circle"></i></span>
-					</div></div>
-					<div class="col-md-12"><div class="num-block clearfix">
-						<p class="title">More Than Three Symptoms</p>
-						<p class="num">10</p>
-						<span class="float-right status-dot danger"><i class="fas fa-circle"></i></span>
-					</div></div>
-				</div>
-				{# contact #}
-				<div class="clearfix">
-					<div class="float-right link-group-block">
-						<ul>
-							<li><a href="https://www.facebook.com/FiO.ONE.EN/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-							<li><a href="mailto:info@fio.one" target="_blank"><i class="fas fa-envelope"></i></a></li>
-						</ul>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	</div></div>
+	
 	{# element #}
 	{# <div class="row">
 		<div class="col-md-12">
@@ -68,21 +121,6 @@
 			<div class="alert warning">This is an alert box.</div>
 			<div class="alert danger">This is an alert box.</div>
 		</div>
-	</div>
-	<p class="block-title">Number<span class="float-right block-info">Last Update: 2020-03-20 19:00:00</span></p>
-	<div class="row">
-		<div class="col-md-4"><div class="block num-block">
-			<p class="title">Total</p>
-			<p class="num">70</p>
-		</div></div>
-		<div class="col-md-4"><div class="block num-block">
-			<p class="title">Done</p>
-			<p class="num">60</p>
-		</div></div>
-		<div class="col-md-4"><div class="block num-block">
-			<p class="title">Wait</p>
-			<p class="num">10</p>
-		</div></div>
 	</div>
 	<div class="row">
 		<div class="col-md-6">
@@ -96,55 +134,6 @@
 			<div class="block status-bg-danger">
 				<p>Danger</p>
 			</div>
-		</div>
-		<div class="col-md-12">
-			<p class="block-title">Log</p>
-			<table>
-		    	<thead>
-		    		<tr>
-		    			<th>ID</th>
-		    			<th>Name</th>
-		    			<th>Date</th>
-		    			<th>Num</th>
-		    			<th>Action</th>
-		    		</tr>
-		    	</thead>
-		    	<tbody>
-		    		<tr>
-		    			<td>1</td>
-		    			<td>Denny Wang</td>
-		    			<td>2020-03-20 19:00:00</td>
-		    			<td>4</td>
-		    			<td>
-		    				<button class="btn">Log</button>
-		    				<button class="btn-primary">Export</button>
-		    				<button class="btn-success">Success</button>
-		    				<button class="btn-warning">Warning</button>
-		    				<button class="btn-danger">Danger</button>
-		    			</td>
-		    		</tr>
-		    		<tr>
-		    			<td>2</td>
-		    			<td>Denny Wang</td>
-		    			<td>2020-03-20 19:00:00</td>
-		    			<td>4</td>
-		    			<td>
-		    				<button class="btn-primary">Log</button>
-		    				<button class="btn-primary">Export</button>
-		    			</td>
-		    		</tr>
-		    		<tr>
-		    			<td>3</td>
-		    			<td>Denny Wang</td>
-		    			<td>2020-03-20 19:00:00</td>
-		    			<td>4</td>
-		    			<td>
-		    				<button class="btn-primary">Log</button>
-		    				<button class="btn-primary">Export</button>
-		    			</td>
-		    		</tr>
-		    	</tbody>
-		    </table>
 		</div>
 	</div> #}
 </div></body>
