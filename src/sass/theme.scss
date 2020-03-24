@@ -43,16 +43,122 @@ body {
   line-height: 1.4;
 	color: $base-color;
   position: relative;
+  background: #f7f5ec;
   -webkit-overflow-scrolling: touch;
+  word-break: break-word;
   &.lang-ch {
     font-family: 'Noto Sans TC', sans-serif;
   }
 }
 
-.container {
-  margin: 0 auto;
-  padding: 30px;
+.center-flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.info-container {
+  min-height: 100vh;
+  padding: 70px;
+  background: transparent url(../image/bg.jpeg) scroll no-repeat 50% 50%;
+  color: #FFF;
+  font-weight: bold;
+
+  .info-block {
+    border: 2px solid #FFF;
+    padding: 24px 16px;
+    text-align: left;
+    margin: 0 auto 90px auto;
+    font-size: $l-font;
+  }
+  
+  a {
+    display: inline-block;
+    color: #FFF;
+    &:hover {
+      text-decoration: underline;
+      color: #FFF;
+    }
+  }
+}
+
+
+.fio-block {
+  margin: 0 auto;
+  text-align: center;
+}
+.logo {
+  display: block;
+  img {
+    width: 130px;
+    height: auto;
+  }
+}
+
+.num-container {
+  min-height: 100vh;
+  padding: 70px;
+
+  h1 {
+    color: #009389;
+    margin-bottom: 45px;
+  }
+}
+.num-block {
+  margin-bottom: 24px;
+  .title {
+    text-align: left;
+    margin-bottom: 8px;
+    font-size: $s-font;
+  }
+  .num {
+    border: 1px solid $base-color;
+    background: #FFF;
+    text-align: center;
+    padding: 8px 0;
+    font-size: $xxl-font;
+    font-weight: bold;
+    color: #68808c;
+  }
+}
+
+.status-dot {
+  font-size: $m-font;
+  display: inline-block;
+
+  &.wait {
+    color: $base-color;
+  }
+  &.success {
+    color: $success-color;
+  }
+  &.warning {
+    color: $warning-color;
+  }
+  &.danger {
+    color: $danger-color;
+  }
+}
+
+.link-group-block {
+  text-align: right;
+  li {
+    display: inline-block;
+    margin-left: 16px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  a {
+    color: #004f75;
+    font-size: $xxl-font;
+    &:hover {
+      color: rgba(#004f75, .8);
+    }
+  }
+}
+
+
 
 //status-bg
 .status-bg-success {
@@ -168,9 +274,6 @@ table {
     }
 }
 
-.block {
-  padding: 30px;
-}
 .block-title {
   font-size: $xl-font;
   font-weight: bold;
@@ -178,19 +281,6 @@ table {
 }
 .block-info {
   font-size: $m-font;
-}
-.num-block {
-  text-align: center;
-  border: 1px solid $base-color;
-
-  .title {
-    font-size: $s-font;  
-  }
-  .num {
-    font-size: $xxl-font;
-    font-weight: bold;
-    margin: 16px 0;
-  }
 }
 
 @import "mobile";
