@@ -16,118 +16,132 @@
  
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">	
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-cookies@1.7.0/vue-cookies.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script><link href="styles.css?v=1585044812" rel="stylesheet"><script type="text/javascript" src="js/bundle.js"></script></head>
-<body class="lang-en"><div class="row">
-	
-	<div class="col-md-5 center-flexbox info-container"><div class="info-container-inner">
-		<div class="info-block">
-			<p>Call 911 if you have a medical emergency: If you have a medical emergency and need to call 911, notify the operator that you have or think you might have, COVID-19. If possible, put on a facemask before medical help arrives.</p>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script><link href="styles.css?v=1585132793" rel="stylesheet"><script type="text/javascript" src="js/bundle.js"></script></head>
+<body class="lang-en"><div id="vue" class="row page-container">
+	<div class="col-md-5 center-flexbox sidebar-container"><div class="inner">
+	<div class="info-block">
+		<p>Call 911 if you have a medical emergency: If you have a medical emergency and need to call 911, notify the operator that you have or think you might have, COVID-19. If possible, put on a facemask before medical help arrives.<a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" target="_blank">CDC website</a></p>
+	</div>
+	<div class="fio-block">
+		<a href="https://www.fio.one/" class="fio"><img src="image/fio.svg"></a>
+		<p>the Building Block of your Future</p>
+		<p>Email: <a href="mailto:info@fio.one">info@fio.one</a></p>
+		<p>Copyright © <span id="year"></span>. All rights reserved.</p>
+		<div class="link-group-block">
+			<ul>
+				<li><a href="https://www.facebook.com/FiO.ONE.EN/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+				<li><a href="mailto:info@fio.one" target="_blank"><i class="fas fa-envelope"></i></a></li>
+			</ul>
 		</div>
-		<div class="fio-block">
-			<a href="#" class="logo"><img src="image/logo-white.svg"></a>
-			<p>the Building Block of your Future</p>
-			<p>Email: <a href="mailto:info@fio.one">info@fio.one</a></p>
-		</div>
-	</div></div>
-	<div class="col-md-7 center-flexbox num-container"><div class="num-container-inner">
-		<h1>Health Management</h1>
-		
-		<div class="row center-xs"><div class="col-md-10 auth-form">
-            <div class="form-group has-error">
-              <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require/>
-              <div class="invalid-feedback text-right">Please enter your username.</div>
-            </div>
-            <div class="clearfix">
-                <a href="#" class="text-link text-right float-right">No account? Register here</a>
-                <a href="#" class="text-link text-left float-left">Forgot Password</a>
-            </div>
-            <div class="submit-area">
-                <button class="btn btn-primary submit-btn" type="button">Login</button>
-            </div>
-		</div></div>
-		
-		<div class="row center-xs">
-			<div class="col-md-10"><div class="num-block clearfix">
-				<p class="title">Number Of People Filling Out Today</p>
-				<p class="num">70</p>
-				<span class="float-right status-dot wait"><i class="fas fa-circle"></i></span>
-			</div></div>
-			<div class="col-md-10"><div class="num-block clearfix">
-				<p class="title">Healthy People</p>
-				<p class="num">60</p>
-				<span class="float-right status-dot success"><i class="fas fa-circle"></i></span>
-			</div></div>
-			<div class="col-md-10"><div class="num-block clearfix">
-				<p class="title">One Or Two Symptoms</p>
-				<p class="num">10</p>
-				<span class="float-right status-dot warning"><i class="fas fa-circle"></i></span>
-			</div></div>
-			<div class="col-md-10"><div class="num-block clearfix">
-				<p class="title">More Than Three Symptoms</p>
-				<p class="num">10</p>
-				<span class="float-right status-dot danger"><i class="fas fa-circle"></i></span>
-			</div></div>
-		</div>
-		
-		<div class="row"><div class="col-md-12"><div class="table-responsive"><table>
-	    	<thead>
-	    		<tr>
-	    			<th>ID</th>
-	    			<th>Name</th>
-	    			<th>Date</th>
-	    			<th>Num</th>
-	    			<th>Action</th>
-	    		</tr>
-	    	</thead>
-	    	<tbody>
-	    		<tr>
-	    			<td>1</td>
-	    			<td>Denny Wang</td>
-	    			<td>2020-03-20 19:00:00</td>
-	    			<td>4</td>
-	    			<td>
-	    				<button class="btn">Log</button>
-	    				<button class="btn-primary">Export</button>
-	    			</td>
-	    		</tr>
-	    		<tr>
-	    			<td>2</td>
-	    			<td>Denny Wang</td>
-	    			<td>2020-03-20 19:00:00</td>
-	    			<td>4</td>
-	    			<td>
-	    				<button class="btn">Log</button>
-	    				<button class="btn-primary">Export</button>
-	    			</td>
-	    		</tr>
-	    		<tr>
-	    			<td>3</td>
-	    			<td>Denny Wang</td>
-	    			<td>2020-03-20 19:00:00</td>
-	    			<td>4</td>
-	    			<td>
-	    				<button class="btn">Log</button>
-	    				<button class="btn-primary">Export</button>
-	    				<button class="btn-primary">Export</button>
-	    				<button class="btn-primary">Export</button>
-	    				<button class="btn-primary">Export</button>
-	    				<button class="btn-primary">Export</button>
-	    			</td>
-	    		</tr>
-	    	</tbody>
-		</table></div></div></div>
-		
-		<div class="clearfix">
-			<div class="float-right link-group-block">
-				<ul>
-					<li><a href="https://www.facebook.com/FiO.ONE.EN/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-					<li><a href="mailto:info@fio.one" target="_blank"><i class="fas fa-envelope"></i></a></li>
-				</ul>
+	</div>
+</div></div>	<div class="col-md-7 center-flexbox content-container"><div class="inner">
+		<a class="link-text float-right" @click="logout()" v-if="page !== 'login'">Logout</a>
+		<img class="logo" src="image/logo.svg">
+		<div class="row center-xs" v-if="page === 'login'"><div class="col-md-12 auth-form">
+    <div id="form-group-username" class="form-group">
+      <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require @keyup.enter="login"/>
+      <div class="invalid-feedback text-right"></div>
+    </div>
+    <div class="clearfix">
+        <a href="#" class="text-link text-right float-right">No account? Register here</a>
+        <a href="#" class="text-link text-left float-left">Forgot Password</a>
+    </div>
+    <div class="submit-area">
+        <button class="btn btn-primary submit-btn" type="button" @click="login()">Login</button>
+    </div>
+</div></div>		<div class="row center-xs" v-if="page === 'dashboard'">
+	<div class="col-md-12 num-block">
+		<p class="title">Number of People Participated Today</p>
+		<div class="row between-xs">
+			<div class="col-md-8">
+				<p class="num" v-text="overview.total" @click="showLog()"></p>
+				<span class="float-right status-dot" :class="getStatus()"><i class="fas fa-circle"></i></span>
+			</div>
+			<div class="col-md-3">
+				<a href="#" target="_blank">
+					<span class="status-dot wait"><i class="fas fa-circle"></i></span><br>
+					Googlesheet link
+				</a>
 			</div>
 		</div>
-	</div></div>
-	
+	</div>
+	<div class="col-md-12 num-block">
+		<p class="title">Number of Healthy People</p>
+		<div class="row between-xs">
+			<div class="col-md-8">
+				<p class="num" v-text="overview.health" @click="showLog()"></p>
+			</div>
+			<div class="col-md-3">
+				<p class="num percent" v-text="toPercent(overview.health, overview.total)" @click="showLog()"></p>
+				<p class="help-text">Based on Number of Participants</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12 num-block">
+		<p class="title">People with Fever</p>
+		<div class="row between-xs">
+			<div class="col-md-8">
+				<p class="num" v-text="overview.fever" @click="showLog()"></p>
+			</div>
+			<div class="col-md-3">
+				<p class="num percent" v-text="toPercent(overview.fever, overview.total)" @click="showLog()"></p>
+				<p class="help-text">Based on Number of Participants</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12 num-block">
+		<p class="title">People with One or Two Symptoms</p>
+		<div class="row between-xs">
+			<div class="col-md-8">
+				<p class="num" v-text="overview.warning" @click="showLog()"></p>
+			</div>
+			<div class="col-md-3">
+				<p class="num percent" v-text="toPercent(overview.warning, overview.total)" @click="showLog()"></p>
+				<p class="help-text">Based on Number of Participants</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-12 num-block">
+		<p class="title">People with More than Three Symptoms</p>
+		<div class="row between-xs">
+			<div class="col-md-8">
+				<p class="num" v-text="overview.danger" @click="showLog()"></p>
+			</div>
+			<div class="col-md-3">
+				<p class="num percent" v-text="toPercent(overview.danger, overview.total)" @click="showLog()"></p>
+				<p class="help-text">Based on Number of Participants</p>
+			</div>
+		</div>
+	</div>
+</div>		<div class="row" v-if="page === 'log'"><div class="col-md-12">
+	<button class="btn" @click="goPage('dashboard')">Back</button>
+	<div class="table-responsive"><table>
+		<thead><tr>
+			<th>ID</th>
+			<th>Email</th>
+			<th>Name</th>
+			<th>Date</th>
+			<th>Num</th>
+			<th>Action</th>
+		</tr></thead>
+		<tbody>
+			<tr v-for="(row, index) in log">
+				<td v-text="index"></td>
+				<td v-text="row.email"></td>
+				<td v-text="row.name"></td>
+				<td v-text="row.date"></td>
+				<td v-text="row.num"></td>
+				<td>
+					<button class="btn">Log</button>
+					<button class="btn-primary">Export</button>
+				</td>
+			</tr>
+		</tbody>
+	</table></div>
+</div></div>	</div></div>
 	
 	
 </div></body>

@@ -2,63 +2,17 @@
 <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="190.334px" height="170px" viewBox="0 0 190.334 170" enable-background="new 0 0 190.334 170" xml:space="preserve">
+	 width="401.103px" height="48.5px" viewBox="0 0 401.103 48.5" enable-background="new 0 0 401.103 48.5" xml:space="preserve">
 <g>
 	<g>
-		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="42.8398" y1="85.9722" x2="75.0024" y2="85.9722">
-			<stop  offset="0.0053" style="stop-color:#006AB6"/>
-			<stop  offset="0.3352" style="stop-color:#3B5CA9"/>
-			<stop  offset="0.3842" style="stop-color:#4359A6"/>
-			<stop  offset="0.6635" style="stop-color:#64519F"/>
-			<stop  offset="0.7781" style="stop-color:#674E9E"/>
-			<stop  offset="0.8874" style="stop-color:#6D4799"/>
-			<stop  offset="0.9943" style="stop-color:#773991"/>
-			<stop  offset="1" style="stop-color:#783791"/>
-		</linearGradient>
-		<rect x="42.84" y="85.056" fill="url(#SVGID_1_)" width="32.163" height="1.833"/>
+		<text transform="matrix(1 0 0 1 0 36.4907)" fill="#13AE67" font-family="'Montserrat-SemiBold'" font-size="40">HealthyMe</text>
 	</g>
-	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="30.7065" y1="85.0264" x2="75.0024" y2="85.0264">
-		<stop  offset="0.0053" style="stop-color:#006AB6"/>
-		<stop  offset="0.3352" style="stop-color:#3B5CA9"/>
-		<stop  offset="0.3842" style="stop-color:#4359A6"/>
-		<stop  offset="0.6635" style="stop-color:#64519F"/>
-		<stop  offset="0.7781" style="stop-color:#674E9E"/>
-		<stop  offset="0.8874" style="stop-color:#6D4799"/>
-		<stop  offset="0.9943" style="stop-color:#773991"/>
-		<stop  offset="1" style="stop-color:#783791"/>
-	</linearGradient>
-	<path fill="url(#SVGID_2_)" d="M56.306,34.989c-14.115,0-25.599,11.487-25.599,25.601v74.474h1.835V60.59
-		c0-13.105,10.66-23.766,23.764-23.766h18.697v-1.835H56.306z"/>
 	<g>
-		<g>
-			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="91.0552" y1="85.4883" x2="92.8882" y2="85.4883">
-				<stop  offset="0.0053" style="stop-color:#006AB6"/>
-				<stop  offset="0.3352" style="stop-color:#3B5CA9"/>
-				<stop  offset="0.3842" style="stop-color:#4359A6"/>
-				<stop  offset="0.6635" style="stop-color:#64519F"/>
-				<stop  offset="0.7781" style="stop-color:#674E9E"/>
-				<stop  offset="0.8874" style="stop-color:#6D4799"/>
-				<stop  offset="0.9943" style="stop-color:#773991"/>
-				<stop  offset="1" style="stop-color:#783791"/>
-			</linearGradient>
-			<rect x="91.055" y="59.893" fill="url(#SVGID_3_)" width="1.833" height="51.191"/>
-		</g>
-		<g>
-			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="109.7876" y1="85.4878" x2="159.6875" y2="85.4878">
-				<stop  offset="0.0053" style="stop-color:#006AB6"/>
-				<stop  offset="0.3352" style="stop-color:#3B5CA9"/>
-				<stop  offset="0.3842" style="stop-color:#4359A6"/>
-				<stop  offset="0.6635" style="stop-color:#64519F"/>
-				<stop  offset="0.7781" style="stop-color:#674E9E"/>
-				<stop  offset="0.8874" style="stop-color:#6D4799"/>
-				<stop  offset="0.9943" style="stop-color:#773991"/>
-				<stop  offset="1" style="stop-color:#783791"/>
-			</linearGradient>
-			<path fill="url(#SVGID_4_)" d="M134.738,110.44c-13.759,0-24.95-11.196-24.95-24.955c0-13.757,11.191-24.95,24.95-24.95
-				c13.757,0,24.95,11.193,24.95,24.95C159.688,99.244,148.495,110.44,134.738,110.44z M134.738,62.37
-				c-12.748,0-23.114,10.367-23.114,23.115c0,12.747,10.366,23.114,23.114,23.114c12.746,0,23.117-10.367,23.117-23.114
-				C157.854,72.737,147.483,62.37,134.738,62.37z"/>
-		</g>
+		<text transform="matrix(1 0 0 1 229.0112 34.5728)" fill="#13AE67" font-family="'Montserrat-SemiBold'" font-size="16">by FiO</text>
+	</g>
+	<g>
+		<polygon fill="#13AE67" points="289.445,30.674 283.784,37.571 398.382,37.571 398.382,30.674 		"/>
+		<polygon fill="#13AE67" points="297.98,20.276 292.319,27.174 398.382,27.174 398.382,20.276 		"/>
 	</g>
 </g>
 </svg>
