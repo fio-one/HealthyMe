@@ -8,7 +8,7 @@
 	{# dashboard #}
 	<div class="col-md-5 center-flexbox info-container"><div class="info-container-inner">
 		<div class="info-block">
-			<p>Call 911 if you have a medical emergency: If you have a medical emergency and need to call 911, notify the operator that you have or think you might have, COVID-19. If possible, put on a facemask before medical help arrives.</p>
+			<p>Call 911 if you have a medical emergency: If you have a medical emergency and need to call 911, notify the operator that you have or think you might have, COVID-19. If possible, put on a facemask before medical help arrives.<a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" target="_blank">CDC website</a></p>
 		</div>
 		<div class="fio-block">
 			<a href="#" class="logo"><img src="image/logo-white.svg"></a>
@@ -34,26 +34,73 @@
 		</div></div>
 		{# num #}
 		<div class="row center-xs">
-			<div class="col-md-10"><div class="num-block clearfix">
-				<p class="title">Number Of People Filling Out Today</p>
-				<p class="num">70</p>
-				<span class="float-right status-dot wait"><i class="fas fa-circle"></i></span>
-			</div></div>
-			<div class="col-md-10"><div class="num-block clearfix">
-				<p class="title">Healthy People</p>
-				<p class="num">60</p>
-				<span class="float-right status-dot success"><i class="fas fa-circle"></i></span>
-			</div></div>
-			<div class="col-md-10"><div class="num-block clearfix">
-				<p class="title">One Or Two Symptoms</p>
-				<p class="num">10</p>
-				<span class="float-right status-dot warning"><i class="fas fa-circle"></i></span>
-			</div></div>
-			<div class="col-md-10"><div class="num-block clearfix">
-				<p class="title">More Than Three Symptoms</p>
-				<p class="num">10</p>
-				<span class="float-right status-dot danger"><i class="fas fa-circle"></i></span>
-			</div></div>
+			<div class="col-md-12 num-block">
+				<p class="title">Number of People Participated Today</p>
+				<div class="row between-xs">
+					<div class="col-md-8">
+						<p class="num">60</p>
+						<span class="float-right status-dot wait"><i class="fas fa-circle"></i></span>
+					</div>
+					<div class="col-md-3">
+						<a href="#" target="_blank">
+							<span class="status-dot wait"><i class="fas fa-circle"></i></span><br>
+							Googlesheet link
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12 num-block">
+				<p class="title">Number of Healthy People</p>
+				<div class="row between-xs">
+					<div class="col-md-8">
+						<p class="num">60</p>
+						<span class="float-right status-dot success"><i class="fas fa-circle"></i></span>
+					</div>
+					<div class="col-md-3">
+						<p class="num percent">2%</p>
+						<p class="help-text">Based on Number of Participants</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12 num-block">
+				<p class="title">People with Fever</p>
+				<div class="row between-xs">
+					<div class="col-md-8">
+						<p class="num">60</p>
+						<span class="float-right status-dot warning"><i class="fas fa-circle"></i></span>
+					</div>
+					<div class="col-md-3">
+						<p class="num percent">2%</p>
+						<p class="help-text">Based on Number of Participants</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12 num-block">
+				<p class="title">People with One or Two Symptoms</p>
+				<div class="row between-xs">
+					<div class="col-md-8">
+						<p class="num">60</p>
+						<span class="float-right status-dot danger"><i class="fas fa-circle"></i></span>
+					</div>
+					<div class="col-md-3">
+						<p class="num percent">2%</p>
+						<p class="help-text">Based on Number of Participants</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12 num-block">
+				<p class="title">People with More than Three Symptoms</p>
+				<div class="row between-xs">
+					<div class="col-md-8">
+						<p class="num">60</p>
+						<span class="float-right status-dot danger"><i class="fas fa-circle"></i></span>
+					</div>
+					<div class="col-md-3">
+						<p class="num percent">2%</p>
+						<p class="help-text">Based on Number of Participants</p>
+					</div>
+				</div>
+			</div>
 		</div>
 		{# log #}
 		<div class="row"><div class="col-md-12"><div class="table-responsive"><table>
