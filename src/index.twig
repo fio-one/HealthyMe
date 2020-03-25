@@ -7,20 +7,11 @@
 <body class="lang-{{ htmlWebpackPlugin.options.data.lang }}"><div id="vue" class="row page-container">
 	{% include 'partial/sidebar.twig' %}
 	<div class="col-md-7 center-flexbox content-container"><div class="inner">
+		<a class="link-text float-right" @click="logout()" v-if="page !== 'login'">Logout</a>
 		<img class="logo" src="image/logo.svg">
 		{% include 'partial/login.twig' %}
 		{% include 'partial/dashboard.twig' %}
 		{% include 'partial/log.twig' %}
-		{# contact #}
-		<div class="clearfix contact-container" v-if="page !== 'login'">
-			<button class="btn float-left" @click="logout()">Logout</button>
-			<div class="float-right link-group-block">
-				<ul>
-					<li><a href="https://www.facebook.com/FiO.ONE.EN/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
-					<li><a href="mailto:info@fio.one" target="_blank"><i class="fas fa-envelope"></i></a></li>
-				</ul>
-			</div>
-		</div>
 	</div></div>
 	
 	{# <div class="alert success">This is an alert box.</div>

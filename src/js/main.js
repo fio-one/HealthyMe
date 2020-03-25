@@ -15,8 +15,8 @@ var data = {
 	page: 'login',
 	overview: {
 		total: 30,
-		health: 28,
-		fever: 0,
+		health: 30,
+		fever: 1,
 		warning: 1,
 		danger: 1
 	},
