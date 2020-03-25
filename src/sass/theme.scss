@@ -106,8 +106,8 @@ body {
   text-align: center;
 }
 .logo {
-  height: 55px;
-  width: auto;
+  width: 100%;
+  height: auto;
   margin-bottom: 30px;
 }
 .fio {
@@ -130,8 +130,6 @@ body {
 }
 
 .num-block {
-  margin-bottom: 40px;
-
   .title {
     text-align: left;
     margin-bottom: 8px;
@@ -151,6 +149,10 @@ body {
     font-size: $xxl-font;
     font-weight: bold;
     color: #68808c;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
   .percent {
     color: #82a0af;
@@ -181,6 +183,9 @@ body {
   }
 }
 
+.contact-container {
+  margin-top: 24px;
+}
 .link-group-block {
   text-align: right;
   li {
@@ -211,7 +216,7 @@ body {
     color: $base-color;
     width: 93%;
   }
-  &.has-error {
+  &.is-invalid {
     .form-control {
       border-color: $danger-color;
     }
@@ -318,6 +323,7 @@ body {
   &.warning {
     background: $warning-color;
   }
+
   // .closebtn {
   //   margin-left: 15px;
   //   color: #FFF;
@@ -331,11 +337,9 @@ body {
   //     color: black;
   //   }
   // }
-
 }
 
 //table
-
 .table-responsive {
   display: block;
   width: 100%;

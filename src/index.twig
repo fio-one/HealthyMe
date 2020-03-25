@@ -8,114 +8,12 @@
 	{% include 'partial/sidebar.twig' %}
 	<div class="col-md-7 center-flexbox content-container"><div class="inner">
 		<img class="logo" src="image/logo.svg">
-		{# login #}
-		<div class="row center-xs"><div class="col-md-10 auth-form">
-            <div class="form-group has-error">
-              <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require/>
-              <div class="invalid-feedback text-right">Please enter your username.</div>
-            </div>
-            <div class="clearfix">
-                <a href="#" class="text-link text-right float-right">No account? Register here</a>
-                <a href="#" class="text-link text-left float-left">Forgot Password</a>
-            </div>
-            <div class="submit-area">
-                <button class="btn btn-primary submit-btn" type="button" @click="login()">Login</button>
-            </div>
-		</div></div>
-		{# num #}
-		<div class="row center-xs">
-			<div class="col-md-12 num-block">
-				<p class="title">Number of People Participated Today</p>
-				<div class="row between-xs">
-					<div class="col-md-8">
-						<p class="num" v-text="overview.total"></p>
-						<span class="float-right status-dot" :class="overview.status"><i class="fas fa-circle"></i></span>
-					</div>
-					<div class="col-md-3">
-						<a href="#" target="_blank">
-							<span class="status-dot wait"><i class="fas fa-circle"></i></span><br>
-							Googlesheet link
-						</a>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-12 num-block">
-				<p class="title">Number of Healthy People</p>
-				<div class="row between-xs">
-					<div class="col-md-8">
-						<p class="num" v-text="overview.health"></p>
-					</div>
-					<div class="col-md-3">
-						<p class="num percent" v-text="toPercent(overview.health, overview.total)"></p>
-						<p class="help-text">Based on Number of Participants</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-12 num-block">
-				<p class="title">People with Fever</p>
-				<div class="row between-xs">
-					<div class="col-md-8">
-						<p class="num" v-text="overview.fever"></p>
-					</div>
-					<div class="col-md-3">
-						<p class="num percent" v-text="toPercent(overview.fever, overview.total)"></p>
-						<p class="help-text">Based on Number of Participants</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-12 num-block">
-				<p class="title">People with One or Two Symptoms</p>
-				<div class="row between-xs">
-					<div class="col-md-8">
-						<p class="num" v-text="overview.warning"></p>
-					</div>
-					<div class="col-md-3">
-						<p class="num percent" v-text="toPercent(overview.warning, overview.total)"></p>
-						<p class="help-text">Based on Number of Participants</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-12 num-block">
-				<p class="title">People with More than Three Symptoms</p>
-				<div class="row between-xs">
-					<div class="col-md-8">
-						<p class="num" v-text="overview.danger"></p>
-					</div>
-					<div class="col-md-3">
-						<p class="num percent" v-text="toPercent(overview.danger, overview.total)"></p>
-						<p class="help-text">Based on Number of Participants</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		{# log #}
-		<div class="row"><div class="col-md-12"><div class="table-responsive"><table>
-	    	<thead>
-	    		<tr>
-	    			<th>ID</th>
-	    			<th>Email</th>
-	    			<th>Name</th>
-	    			<th>Date</th>
-	    			<th>Num</th>
-	    			<th>Action</th>
-	    		</tr>
-	    	</thead>
-	    	<tbody>
-	    		<tr v-for="(row, index) in log">
-	    			<td v-text="index"></td>
-	    			<td v-text="row.email"></td>
-	    			<td v-text="row.name"></td>
-	    			<td v-text="row.date"></td>
-	    			<td v-text="row.num"></td>
-	    			<td>
-	    				<button class="btn">Log</button>
-	    				<button class="btn-primary">Export</button>
-	    			</td>
-	    		</tr>
-	    	</tbody>
-		</table></div></div></div>
+		{% include 'partial/login.twig' %}
+		{% include 'partial/dashboard.twig' %}
+		{% include 'partial/log.twig' %}
 		{# contact #}
-		<div class="clearfix">
+		<div class="clearfix contact-container" v-if="page !== 'login'">
+			<button class="btn float-left" @click="logout()">Logout</button>
 			<div class="float-right link-group-block">
 				<ul>
 					<li><a href="https://www.facebook.com/FiO.ONE.EN/" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
@@ -125,27 +23,9 @@
 		</div>
 	</div></div>
 	
-	{# element #}
-	{# <div class="row">
-		<div class="col-md-12">
-			<div class="alert success">This is an alert box.</div>
-			<div class="alert warning">This is an alert box.</div>
-			<div class="alert danger">This is an alert box.</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<p class="block-title">Status</p>
-			<div class="block status-bg-success">
-				<p>Clear</p>
-			</div>
-			<div class="block status-bg-warning">
-				<p>Warning</p>
-			</div>
-			<div class="block status-bg-danger">
-				<p>Danger</p>
-			</div>
-		</div>
-	</div> #}
+	{# <div class="alert success">This is an alert box.</div>
+		<div class="alert warning">This is an alert box.</div>
+		<div class="alert danger">This is an alert box.</div>
+	 #}
 </div></body>
 </html>

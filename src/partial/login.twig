@@ -1,0 +1,13 @@
+<div class="row center-xs" v-if="page === 'login'"><div class="col-md-12 auth-form">
+    <div id="form-group-username" class="form-group">
+      <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require @keyup.enter="login"/>
+      <div class="invalid-feedback text-right"></div>
+    </div>
+    <div class="clearfix">
+        <a href="#" class="text-link text-right float-right">No account? Register here</a>
+        <a href="#" class="text-link text-left float-left">Forgot Password</a>
+    </div>
+    <div class="submit-area">
+        <button class="btn btn-primary submit-btn" type="button" @click="login()">Login</button>
+    </div>
+</div></div>
