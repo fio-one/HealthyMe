@@ -4,20 +4,10 @@
 	{% include 'partial/header.twig' %}
 	{% include 'partial/lib.twig' %}
 </head>
-<body class="lang-{{ htmlWebpackPlugin.options.data.lang }}"><div class="row">
-	{# dashboard #}
-	<div class="col-md-5 center-flexbox info-container"><div class="info-container-inner">
-		<div class="info-block">
-			<p>Call 911 if you have a medical emergency: If you have a medical emergency and need to call 911, notify the operator that you have or think you might have, COVID-19. If possible, put on a facemask before medical help arrives.<a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" target="_blank">CDC website</a></p>
-		</div>
-		<div class="fio-block">
-			<a href="#" class="logo"><img src="image/logo-white.svg"></a>
-			<p>the Building Block of your Future</p>
-			<p>Email: <a href="mailto:info@fio.one">info@fio.one</a></p>
-		</div>
-	</div></div>
-	<div class="col-md-7 center-flexbox num-container"><div class="num-container-inner">
-		<h1>Health Management</h1>
+<body class="lang-{{ htmlWebpackPlugin.options.data.lang }}"><div id="vue" class="row page-container">
+	{% include 'partial/sidebar.twig' %}
+	<div class="col-md-7 center-flexbox content-container"><div class="inner">
+		<img class="logo" src="image/logo.svg">
 		{# login #}
 		<div class="row center-xs"><div class="col-md-10 auth-form">
             <div class="form-group has-error">
@@ -29,7 +19,7 @@
                 <a href="#" class="text-link text-left float-left">Forgot Password</a>
             </div>
             <div class="submit-area">
-                <button class="btn btn-primary submit-btn" type="button">Login</button>
+                <button class="btn btn-primary submit-btn" type="button" @click="login()">Login</button>
             </div>
 		</div></div>
 		{# num #}
@@ -38,8 +28,8 @@
 				<p class="title">Number of People Participated Today</p>
 				<div class="row between-xs">
 					<div class="col-md-8">
-						<p class="num">60</p>
-						<span class="float-right status-dot wait"><i class="fas fa-circle"></i></span>
+						<p class="num" v-text="overview.total"></p>
+						<span class="float-right status-dot" :class="overview.status"><i class="fas fa-circle"></i></span>
 					</div>
 					<div class="col-md-3">
 						<a href="#" target="_blank">
@@ -53,11 +43,10 @@
 				<p class="title">Number of Healthy People</p>
 				<div class="row between-xs">
 					<div class="col-md-8">
-						<p class="num">60</p>
-						<span class="float-right status-dot success"><i class="fas fa-circle"></i></span>
+						<p class="num" v-text="overview.health"></p>
 					</div>
 					<div class="col-md-3">
-						<p class="num percent">2%</p>
+						<p class="num percent" v-text="toPercent(overview.health, overview.total)"></p>
 						<p class="help-text">Based on Number of Participants</p>
 					</div>
 				</div>
@@ -66,11 +55,10 @@
 				<p class="title">People with Fever</p>
 				<div class="row between-xs">
 					<div class="col-md-8">
-						<p class="num">60</p>
-						<span class="float-right status-dot warning"><i class="fas fa-circle"></i></span>
+						<p class="num" v-text="overview.fever"></p>
 					</div>
 					<div class="col-md-3">
-						<p class="num percent">2%</p>
+						<p class="num percent" v-text="toPercent(overview.fever, overview.total)"></p>
 						<p class="help-text">Based on Number of Participants</p>
 					</div>
 				</div>
@@ -79,11 +67,10 @@
 				<p class="title">People with One or Two Symptoms</p>
 				<div class="row between-xs">
 					<div class="col-md-8">
-						<p class="num">60</p>
-						<span class="float-right status-dot danger"><i class="fas fa-circle"></i></span>
+						<p class="num" v-text="overview.warning"></p>
 					</div>
 					<div class="col-md-3">
-						<p class="num percent">2%</p>
+						<p class="num percent" v-text="toPercent(overview.warning, overview.total)"></p>
 						<p class="help-text">Based on Number of Participants</p>
 					</div>
 				</div>
@@ -92,11 +79,10 @@
 				<p class="title">People with More than Three Symptoms</p>
 				<div class="row between-xs">
 					<div class="col-md-8">
-						<p class="num">60</p>
-						<span class="float-right status-dot danger"><i class="fas fa-circle"></i></span>
+						<p class="num" v-text="overview.danger"></p>
 					</div>
 					<div class="col-md-3">
-						<p class="num percent">2%</p>
+						<p class="num percent" v-text="toPercent(overview.danger, overview.total)"></p>
 						<p class="help-text">Based on Number of Participants</p>
 					</div>
 				</div>
@@ -107,6 +93,7 @@
 	    	<thead>
 	    		<tr>
 	    			<th>ID</th>
+	    			<th>Email</th>
 	    			<th>Name</th>
 	    			<th>Date</th>
 	    			<th>Num</th>
@@ -114,37 +101,14 @@
 	    		</tr>
 	    	</thead>
 	    	<tbody>
-	    		<tr>
-	    			<td>1</td>
-	    			<td>Denny Wang</td>
-	    			<td>2020-03-20 19:00:00</td>
-	    			<td>4</td>
+	    		<tr v-for="(row, index) in log">
+	    			<td v-text="index"></td>
+	    			<td v-text="row.email"></td>
+	    			<td v-text="row.name"></td>
+	    			<td v-text="row.date"></td>
+	    			<td v-text="row.num"></td>
 	    			<td>
 	    				<button class="btn">Log</button>
-	    				<button class="btn-primary">Export</button>
-	    			</td>
-	    		</tr>
-	    		<tr>
-	    			<td>2</td>
-	    			<td>Denny Wang</td>
-	    			<td>2020-03-20 19:00:00</td>
-	    			<td>4</td>
-	    			<td>
-	    				<button class="btn">Log</button>
-	    				<button class="btn-primary">Export</button>
-	    			</td>
-	    		</tr>
-	    		<tr>
-	    			<td>3</td>
-	    			<td>Denny Wang</td>
-	    			<td>2020-03-20 19:00:00</td>
-	    			<td>4</td>
-	    			<td>
-	    				<button class="btn">Log</button>
-	    				<button class="btn-primary">Export</button>
-	    				<button class="btn-primary">Export</button>
-	    				<button class="btn-primary">Export</button>
-	    				<button class="btn-primary">Export</button>
 	    				<button class="btn-primary">Export</button>
 	    			</td>
 	    		</tr>

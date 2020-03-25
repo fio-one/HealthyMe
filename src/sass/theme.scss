@@ -63,7 +63,11 @@ body {
   justify-content: center;
 }
 
-.info-container {
+.page-container {
+  width: 100%;
+}
+
+.sidebar-container {
   min-height: 100vh;
   padding: 70px;
   background: transparent url(../image/bg.jpeg) scroll no-repeat 50% 50%;
@@ -102,6 +106,11 @@ body {
   text-align: center;
 }
 .logo {
+  height: 55px;
+  width: auto;
+  margin-bottom: 30px;
+}
+.fio {
   display: block;
   img {
     width: 130px;
@@ -109,7 +118,7 @@ body {
   }
 }
 
-.num-container {
+.content-container {
   min-height: 100vh;
   padding: 70px;
 
