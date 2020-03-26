@@ -19,7 +19,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-cookies@1.7.0/vue-cookies.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script><link href="styles.css?v=1585192929" rel="stylesheet"><script type="text/javascript" src="js/bundle.js"></script></head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script><link href="styles.css?v=1585220719" rel="stylesheet"><script type="text/javascript" src="js/bundle.js"></script></head>
 <body class="lang-en"><div id="vue" class="row page-container">
 	<div class="col-md-5 center-flexbox sidebar-container"><div class="inner">
 	<div class="info-block">
@@ -37,28 +37,79 @@
 			</ul>
 		</div>
 	</div>
-</div></div>	<div class="col-md-7 center-flexbox content-container first-xs"><div class="inner">
-		<a class="link-text float-right" @click="logout()" v-if="page !== 'login'">Logout</a>
-		<img class="logo" src="image/logo.svg">
-		<div class="row center-xs" v-if="page === 'login'"><div class="col-md-12 auth-form">
-    <div id="form-group-username" class="form-group">
-      <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require @keyup.enter="login"/>
-      <div class="invalid-feedback text-right"></div>
-    </div>
-    <div class="clearfix">
-        <a href="#" class="text-link text-right float-right">No account? Register here</a>
-        <a href="#" class="text-link text-left float-left">Forgot Password</a>
-    </div>
-    <div class="submit-area">
-        <button class="btn btn-primary submit-btn" type="button" @click="login()">Login</button>
-    </div>
-</div></div>		<div class="row center-xs" v-if="page === 'dashboard'">
+</div></div>	<div class="col-md-7 content-container first-xs">
+		<div class="toolbar clearfix">
+			<a class="link-text float-right" @click="logout()" v-if="page == 'dashboard' || page == 'log'">Logout</a>
+			<img class="logo" src="image/logo.png">
+		</div>
+		<div class="center-flexbox content-container-inner" v-if="page === 'login'">
+    <div class="row center-xs"><div class="col-md-12 auth-form">
+        <div id="form-group-username" class="form-group">
+          <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require @keyup.enter="login"/>
+          <div class="invalid-feedback text-right"></div>
+        </div>
+        <div class="clearfix">
+            <a href="#" class="text-link text-right float-right" @click="goPage('register')">No account? Register here</a>
+            <a href="#" class="text-link text-left float-left">Forgot Password</a>
+        </div>
+        <div class="submit-area">
+            <button class="btn btn-primary submit-btn" type="button" @click="login()">Login</button>
+        </div>
+    </div></div>
+</div>		<div class="center-flexbox content-container-inner" v-if="page === 'register'">
+    <div class="row center-xs"><div class="col-md-12 register-form">
+        <div class="form-group" id="form-group-name">
+          <input class="form-control" type="text" placeholder="Name/Company Name" require v-model="apply.name"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the Name/Company Name in the above field.</p>
+        </div>
+        <div class="form-group" id="form-group-email">
+          <input class="form-control" type="text" placeholder="Email" require v-model="apply.email"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the Email in the above field.</p>
+        </div>
+        <div class="form-group" id="form-group-email-confirmation">
+          <input class="form-control" type="text" placeholder="E-mail Confirmation" require v-model="apply.email_confirmation"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the E-mail in the above field again.</p>
+        </div>
+        <div class="form-group" id="form-group-zip-code">
+          <input class="form-control" type="text" placeholder="ZIP Code" require v-model="apply.zip_code"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the ZIP Code in the above field.</p>
+        </div>
+        
+        <div class="row form-group" id="form-group-type">
+        	<div class="col-md-6 form-check text-left">
+			  <input class="form-check-input" name="type" type="radio" id="type-personal" value="personal" v-model="apply.type">
+			  <label class="form-check-label" for="type-personal">Personal</label>
+			</div>
+			<div class="col-md-6 form-check text-left">
+			  <input class="form-check-input" name="type" type="radio" id="type-business" value="business" v-model="apply.type">
+			  <label class="form-check-label" for="type-business">Business</label>
+			</div>
+			<p class="help-text text-left">Please choose your type in the above field.</p>
+        </div>
+        <div class="form-group" id="form-group-ein" v-if="apply.type === 'business'">
+          <input class="form-control" type="text" placeholder="EIN Number" require v-model="apply.ein"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the EIN Number in the above field again.</p>
+        </div>
+        <div class="form-group" id="form-group-title" v-if="apply.type === 'business'">
+          <input class="form-control" type="text" placeholder="Applicant Title / Name" require v-model="apply.title"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the Applicant Title / Name in the above field again.</p>
+        </div>
+        <div class="submit-area">
+            <button class="btn btn-primary submit-btn" type="button" @click="register()">Register</button>
+        </div>
+    </div></div>
+</div>		<div class="content-container-inner" v-if="page === 'dashboard'"><div class="row center-xs">
 	<div class="col-md-12 col-xs-12 num-block">
 		<p class="title">Number of People Participated Today</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.total" @click="showLog()"></p>
-				<span class="float-right status-dot" :class="getStatus()"><i class="fas fa-circle"></i></span>
+				<p class="num" v-text="overview.total" @click="showLog()" :class="getStatus('total')"></p>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<a href="#" target="_blank">
@@ -72,7 +123,7 @@
 		<p class="title">Number of Healthy People</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.health" @click="showLog()"></p>
+				<p class="num" v-text="overview.health" @click="showLog()" :class="getStatus('total')"></p>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.health, overview.total)" @click="showLog()"></p>
@@ -84,7 +135,7 @@
 		<p class="title">People with Fever</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.fever" @click="showLog()"></p>
+				<p class="num" v-text="overview.fever" @click="showLog()" :class="getStatus('fever')"></p>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.fever, overview.total)" @click="showLog()"></p>
@@ -96,7 +147,7 @@
 		<p class="title">People with One or Two Symptoms</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.warning" @click="showLog()"></p>
+				<p class="num" v-text="overview.warning" @click="showLog()" :class="getStatus('warning')"></p>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.warning, overview.total)" @click="showLog()"></p>
@@ -108,7 +159,7 @@
 		<p class="title">People with More than Three Symptoms</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.danger" @click="showLog()"></p>
+				<p class="num" v-text="overview.danger" @click="showLog()" :class="getStatus('danger')"></p>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.danger, overview.total)" @click="showLog()"></p>
@@ -116,32 +167,34 @@
 			</div>
 		</div>
 	</div>
-</div>		<div class="row" v-if="page === 'log'"><div class="col-md-12">
-	<button class="btn" @click="goPage('dashboard')">Back</button>
-	<div class="table-responsive"><table>
-		<thead><tr>
-			<th>ID</th>
-			<th>Email</th>
-			<th>Name</th>
-			<th>Date</th>
-			<th>Num</th>
-			<th>Action</th>
-		</tr></thead>
-		<tbody>
-			<tr v-for="(row, index) in log">
-				<td v-text="index"></td>
-				<td v-text="row.email"></td>
-				<td v-text="row.name"></td>
-				<td v-text="row.date"></td>
-				<td v-text="row.num"></td>
-				<td>
-					<button class="btn">Log</button>
-					<button class="btn-primary">Export</button>
-				</td>
-			</tr>
-		</tbody>
-	</table></div>
-</div></div>	</div></div>
+</div></div>		<div class="content-container-inner" v-if="page === 'log'">
+	<div class="row"><div class="col-md-12">
+		<button class="btn" @click="goPage('dashboard')">Back</button>
+		<div class="table-responsive"><table>
+			<thead><tr>
+				<th>ID</th>
+				<th>Email</th>
+				<th>Name</th>
+				<th>Date</th>
+				<th>Num</th>
+				<th>Action</th>
+			</tr></thead>
+			<tbody>
+				<tr v-for="(row, index) in log">
+					<td v-text="index"></td>
+					<td v-text="row.email"></td>
+					<td v-text="row.name"></td>
+					<td v-text="row.date"></td>
+					<td v-text="row.num"></td>
+					<td>
+						<button class="btn">Log</button>
+						<button class="btn-primary">Export</button>
+					</td>
+				</tr>
+			</tbody>
+		</table></div>
+	</div></div>
+</div>	</div>
 	
 	
 </div></body>
