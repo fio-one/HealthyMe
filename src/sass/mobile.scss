@@ -10,8 +10,23 @@
 
 	.content-container {
 	  margin-left: 0;
-	  min-height: 50vh;
-	  padding: 30px;
+	  min-height: 70vh;
+	  padding: 0 30px;
+	  .content-container-inner {
+	    padding-top: 90px;
+	    min-height: calc(70vh - 90px);
+	  }
+	}
+	.toolbar {
+	  top: 0px;
+	  left: 0px;
+	  padding: 10px 16px;
+	  width: 100%;
+   	  box-sizing: border-box;
+	  .logo {
+	  	width: 100%;
+	  	height: auto;
+	  }
 	}
 
 	.sidebar-container {

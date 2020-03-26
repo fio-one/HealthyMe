@@ -65,19 +65,31 @@ body {
 
 .page-container {
   width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .content-container {
   margin-left: 42vw;
   min-height: 100vh;
-  padding: 70px;
-
-  h1 {
-    text-align: center;
-    color: #009389;
-    margin-bottom: 45px;
+  padding: 0 70px;
+  .content-container-inner {
+    padding-top: 90px;
+    min-height: calc(100vh - 90px);
   }
 }
+
+.toolbar {
+  position: fixed;
+  top: 15px;
+  width: 48%;
+  background: #f7f5ec;
+  .logo {
+    width: auto;
+    height: 60px;
+  }
+}
+
 
 .sidebar-container {
   position: fixed;
@@ -123,11 +135,6 @@ body {
 .fio-block {
   margin: 0 auto;
   text-align: center;
-}
-.logo {
-  width: 100%;
-  height: auto;
-  margin-bottom: 30px;
 }
 .fio-logo {
   display: block;

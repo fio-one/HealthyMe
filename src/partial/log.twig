@@ -1,26 +1,28 @@
-<div class="row" v-if="page === 'log'"><div class="col-md-12">
-	<button class="btn" @click="goPage('dashboard')">Back</button>
-	<div class="table-responsive"><table>
-		<thead><tr>
-			<th>ID</th>
-			<th>Email</th>
-			<th>Name</th>
-			<th>Date</th>
-			<th>Num</th>
-			<th>Action</th>
-		</tr></thead>
-		<tbody>
-			<tr v-for="(row, index) in log">
-				<td v-text="index"></td>
-				<td v-text="row.email"></td>
-				<td v-text="row.name"></td>
-				<td v-text="row.date"></td>
-				<td v-text="row.num"></td>
-				<td>
-					<button class="btn">Log</button>
-					<button class="btn-primary">Export</button>
-				</td>
-			</tr>
-		</tbody>
-	</table></div>
-</div></div>
+<div class="content-container-inner" v-if="page === 'log'">
+	<div class="row"><div class="col-md-12">
+		<button class="btn" @click="goPage('dashboard')">Back</button>
+		<div class="table-responsive"><table>
+			<thead><tr>
+				<th>ID</th>
+				<th>Email</th>
+				<th>Name</th>
+				<th>Date</th>
+				<th>Num</th>
+				<th>Action</th>
+			</tr></thead>
+			<tbody>
+				<tr v-for="(row, index) in log">
+					<td v-text="index"></td>
+					<td v-text="row.email"></td>
+					<td v-text="row.name"></td>
+					<td v-text="row.date"></td>
+					<td v-text="row.num"></td>
+					<td>
+						<button class="btn">Log</button>
+						<button class="btn-primary">Export</button>
+					</td>
+				</tr>
+			</tbody>
+		</table></div>
+	</div></div>
+</div>

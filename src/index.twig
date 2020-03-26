@@ -6,13 +6,15 @@
 </head>
 <body class="lang-{{ htmlWebpackPlugin.options.data.lang }}"><div id="vue" class="row page-container">
 	{% include 'partial/sidebar.twig' %}
-	<div class="col-md-7 center-flexbox content-container first-xs"><div class="inner">
-		<a class="link-text float-right" @click="logout()" v-if="page !== 'login'">Logout</a>
-		<img class="logo" src="image/logo.svg">
+	<div class="col-md-7 content-container first-xs">
+		<div class="toolbar clearfix">
+			<a class="link-text float-right" @click="logout()" v-if="page !== 'login'">Logout</a>
+			<img class="logo" src="image/logo.svg">
+		</div>
 		{% include 'partial/login.twig' %}
 		{% include 'partial/dashboard.twig' %}
 		{% include 'partial/log.twig' %}
-	</div></div>
+	</div>
 	
 	{# <div class="alert success">This is an alert box.</div>
 		<div class="alert warning">This is an alert box.</div>
