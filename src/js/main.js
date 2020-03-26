@@ -12,7 +12,16 @@ function validateEmail(email) {
 var data = {
 	username: '',
 	token: '',
-	page: 'login',
+	page: '',
+	apply: {
+		'name': '',
+		'email': '',
+		'email_confirmation': '',
+		'zip_code': '',
+		'type': 'personal',
+		'ein': '',
+		'title': '',
+	},
 	overview: {
 		total: 30,
 		health: 27,
@@ -56,10 +65,15 @@ window.addEventListener('load', function () {
 		mounted: function() {
 			var c = this.$cookies.get('fio_health');
 		    if(c !== null) {
-		      this.page = 'dashboard';
+		    	this.page = 'dashboard';
+		    } else {
+		    	this.page = 'login';
 		    }
 		},
 		methods: {
+			goPage: function(page) {
+		    	this.page = page;
+		    },
 			toPercent: function(num, total){
 				if(num === 0) {
 					return '-';
@@ -67,7 +81,6 @@ window.addEventListener('load', function () {
 					var n = (num * 100) / total;
 					return Math.round(n) + '%';
 				}
-				
 	        },
 		    resetErrorMessage: function(id) {
 		        $(id).removeClass('is-invalid is-valid')
@@ -117,6 +130,64 @@ window.addEventListener('load', function () {
 		    	}
 				
 		    },
+		    register: function() {
+		    	// reset 
+				vue.resetErrorMessage('.register-form');
+				var validate = true;
+
+				//validate
+				if(this.apply.name === "") {
+				    validate = false;
+				    vue.setErrorMessage('#form-group-name', "Please enter Name.");
+				}
+
+				if(this.apply.email === "") {
+				    validate = false;
+				    vue.setErrorMessage('#form-group-email', "Please enter Email.");
+				} else {
+				    if (!validateEmail(this.apply.email)) {
+				        validate = false;
+				        vue.setErrorMessage('#form-group-email', "Pleaes confirm your email address.");
+				    }
+				}
+				if(this.apply.email_confirmation === "") {
+				    validate = false;
+				    vue.setErrorMessage('#form-group-email-confirmation', "Please enter Email.");
+				} else {
+				    if (!validateEmail(this.apply.email_confirmation)) {
+				        validate = false;
+				        vue.setErrorMessage('#form-group-email-confirmation', "Pleaes confirm your email address.");
+				    }
+				}
+
+				if(this.apply.zip_code === "") {
+				    validate = false;
+				    vue.setErrorMessage('#form-group-zip-code', "Please enter ZIP Code.");
+				}
+
+				if(this.apply.type === 'business') {
+					if(this.apply.ein === "") {
+					    validate = false;
+					    vue.setErrorMessage('#form-group-ein', "Please enter EIN Number.");
+					}
+					if(this.apply.title === "") {
+					    validate = false;
+					    vue.setErrorMessage('#form-group-title', "Please enter Applicant Title / Name.");
+					}
+				}
+
+				if(validate) {
+					console.log(200);
+
+					//todo: clear form
+					alert('register success.');
+					// vue.goPage('login');
+				    // api('/register', data, function(result) {
+				    // }, function(result){
+				    //     vue.setErrorMessage('#form-group-username', result.data.message);
+				    // });
+				}
+		    },
 		    login: function() {
 		        // reset 
 				vue.resetErrorMessage('.auth-form');
@@ -143,8 +214,9 @@ window.addEventListener('load', function () {
 					}, '1d');
 
 					alert('login success.');
-					this.page = 'dashboard';
+					vue.goPage('dashboard');
 
+					//todo: api
 				    // api('/login', data, function(result) {
 				    // }, function(result){
 				    //     vue.setErrorMessage('#form-group-username', result.data.message);
@@ -155,13 +227,10 @@ window.addEventListener('load', function () {
 		    	this.$cookies.remove('fio_health');
 		    	this.username = '';
 		    	this.token = '';
-		    	this.page = 'login';
-		    },
-		    goPage: function(page) {
-		    	this.page = page;
+		    	vue.goPage('login');
 		    },
 		    showLog: function() {
-		    	this.page = 'log';
+		    	vue.goPage('log');
 		    	//todo: api
 		    }
 		}

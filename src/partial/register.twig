@@ -1,0 +1,49 @@
+<div class="center-flexbox content-container-inner" v-if="page === 'register'">
+    <div class="row center-xs"><div class="col-md-12 register-form">
+        <div class="form-group" id="form-group-name">
+          <input class="form-control" type="text" placeholder="Name/Company Name" require v-model="apply.name"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the Name/Company Name in the above field.</p>
+        </div>
+        <div class="form-group" id="form-group-email">
+          <input class="form-control" type="text" placeholder="Email" require v-model="apply.email"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the Email in the above field.</p>
+        </div>
+        <div class="form-group" id="form-group-email-confirmation">
+          <input class="form-control" type="text" placeholder="E-mail Confirmation" require v-model="apply.email_confirmation"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the E-mail in the above field again.</p>
+        </div>
+        <div class="form-group" id="form-group-zip-code">
+          <input class="form-control" type="text" placeholder="ZIP Code" require v-model="apply.zip_code"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the ZIP Code in the above field.</p>
+        </div>
+        {# Business #}
+        <div class="row form-group" id="form-group-type">
+        	<div class="col-md-6 form-check text-left">
+			  <input class="form-check-input" name="type" type="radio" id="type-personal" value="personal" v-model="apply.type">
+			  <label class="form-check-label" for="type-personal">Personal</label>
+			</div>
+			<div class="col-md-6 form-check text-left">
+			  <input class="form-check-input" name="type" type="radio" id="type-business" value="business" v-model="apply.type">
+			  <label class="form-check-label" for="type-business">Business</label>
+			</div>
+			<p class="help-text text-left">Please choose your type in the above field.</p>
+        </div>
+        <div class="form-group" id="form-group-ein" v-if="apply.type === 'business'">
+          <input class="form-control" type="text" placeholder="EIN Number" require v-model="apply.ein"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the EIN Number in the above field again.</p>
+        </div>
+        <div class="form-group" id="form-group-title" v-if="apply.type === 'business'">
+          <input class="form-control" type="text" placeholder="Applicant Title / Name" require v-model="apply.title"/>
+          <div class="invalid-feedback text-right"></div>
+          <p class="help-text text-left">Please fill in the Applicant Title / Name in the above field again.</p>
+        </div>
+        <div class="submit-area">
+            <button class="btn btn-primary submit-btn" type="button" @click="register()">Register</button>
+        </div>
+    </div></div>
+</div>

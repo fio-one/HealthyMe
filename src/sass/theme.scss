@@ -175,7 +175,7 @@ body {
     &.status-bg-danger {
       background: rgba($danger-color, .2);
     }
-    
+
     &:hover {
       text-decoration: underline;
     }
@@ -213,7 +213,7 @@ body {
 }
 
 .form-group {
-  margin: 12px 0;
+  margin: 30px 0;
   .form-control {
     @include border-radius(5px);
     padding: 8px 12px;
@@ -238,7 +238,12 @@ body {
   }
 }
 
-.auth-form {
+.auth-form, .register-form {
+  .help-text {
+    font-size: $xs-font;
+    color: $base-color;
+    margin-top: 4px;
+  }
   .text-link {
     font-size: $s-font;
     color: $base-color;
