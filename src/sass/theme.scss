@@ -67,6 +67,18 @@ body {
   width: 100%;
 }
 
+.content-container {
+  margin-left: 42vw;
+  min-height: 100vh;
+  padding: 70px;
+
+  h1 {
+    text-align: center;
+    color: #009389;
+    margin-bottom: 45px;
+  }
+}
+
 .sidebar-container {
   position: fixed;
   min-height: 100vh;
@@ -117,23 +129,11 @@ body {
   height: auto;
   margin-bottom: 30px;
 }
-.fio {
+.fio-logo {
   display: block;
   img {
     width: 130px;
     height: auto;
-  }
-}
-
-.content-container {
-  margin-left: 42vw;
-  min-height: 100vh;
-  padding: 70px;
-
-  h1 {
-    text-align: center;
-    color: #009389;
-    margin-bottom: 45px;
   }
 }
 
@@ -211,7 +211,6 @@ body {
     }
   }
 }
-
 
 .form-group {
   margin: 12px 0;

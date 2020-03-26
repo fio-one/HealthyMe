@@ -6,6 +6,49 @@
 	.hidden-xs {
 		display: none !important;
 	}
+
+
+	.content-container {
+	  margin-left: 0;
+	  min-height: 50vh;
+	  padding: 30px;
+	}
+
+	.sidebar-container {
+		position: static;
+	  	min-height: 50vh;
+	  	padding: 30px;
+	  	.info-block {
+		    padding: 16px 12px;
+		    margin-bottom: 30px;
+		    font-size: $m-font;
+		 }
+	}
+
+	.fio-block {
+		font-size: $s-font;
+	}
+	.fio-logo img {
+	    width: 30vw;
+	}
+
+	.num-block {
+		margin-bottom: 16px;
+	}
+
+	//table
+	.table-responsive {
+	  max-width: 90vw;
+	  table {
+	      thead th {
+	        padding: 12px 8px;
+	      }
+	      th, td {
+	        padding: 12px 8px;
+	      }
+	  }
+	}
+
 }
 
 /* Landscape */
