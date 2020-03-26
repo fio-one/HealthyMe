@@ -3,8 +3,7 @@
 		<p class="title">Number of People Participated Today</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.total" @click="showLog()"></p>
-				<span class="float-right status-dot" :class="getStatus()"><i class="fas fa-circle"></i></span>
+				<p class="num" v-text="overview.total" @click="showLog()" :class="getStatus('total')"></p>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<a href="#" target="_blank">
@@ -18,7 +17,7 @@
 		<p class="title">Number of Healthy People</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.health" @click="showLog()"></p>
+				<p class="num" v-text="overview.health" @click="showLog()" :class="getStatus('total')"></p>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.health, overview.total)" @click="showLog()"></p>
@@ -30,7 +29,7 @@
 		<p class="title">People with Fever</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.fever" @click="showLog()"></p>
+				<p class="num" v-text="overview.fever" @click="showLog()" :class="getStatus('fever')"></p>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.fever, overview.total)" @click="showLog()"></p>
@@ -42,7 +41,7 @@
 		<p class="title">People with One or Two Symptoms</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.warning" @click="showLog()"></p>
+				<p class="num" v-text="overview.warning" @click="showLog()" :class="getStatus('warning')"></p>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.warning, overview.total)" @click="showLog()"></p>
@@ -54,7 +53,7 @@
 		<p class="title">People with More than Three Symptoms</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.danger" @click="showLog()"></p>
+				<p class="num" v-text="overview.danger" @click="showLog()" :class="getStatus('danger')"></p>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.danger, overview.total)" @click="showLog()"></p>

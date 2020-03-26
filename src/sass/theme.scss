@@ -165,6 +165,17 @@ body {
     font-weight: bold;
     color: #68808c;
     cursor: pointer;
+    //status-bg
+    &.status-bg-success {
+      background: rgba($success-color, .2);
+    }
+    &.status-bg-warning {
+      background: rgba($warning-color, .2);
+    }
+    &.status-bg-danger {
+      background: rgba($danger-color, .2);
+    }
+    
     &:hover {
       text-decoration: underline;
     }
@@ -177,24 +188,6 @@ body {
     &:hover {
       color: $base-color;
     }
-  }
-}
-
-.status-dot {
-  font-size: $m-font;
-  display: inline-block;
-  margin-top: 6px;
-  &.wait {
-    color: $base-color;
-  }
-  &.success {
-    color: $success-color;
-  }
-  &.warning {
-    color: $warning-color;
-  }
-  &.danger {
-    color: $danger-color;
   }
 }
 
@@ -258,18 +251,6 @@ body {
     margin: 16px auto;
     text-align: center;
   }
-}
-
-
-//status-bg
-.status-bg-success {
-  background: rgba($success-color, .2);
-}
-.status-bg-warning {
-  background: rgba($warning-color, .2);
-}
-.status-bg-danger {
-  background: rgba($danger-color, .2);
 }
 
 //button

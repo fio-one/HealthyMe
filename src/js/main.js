@@ -15,9 +15,9 @@ var data = {
 	page: 'login',
 	overview: {
 		total: 30,
-		health: 30,
-		fever: 1,
-		warning: 1,
+		health: 27,
+		fever: 0,
+		warning: 2,
 		danger: 1
 	},
 	log: [
@@ -77,17 +77,45 @@ window.addEventListener('load', function () {
 		        $(id).addClass('is-invalid')
 		             .find('.invalid-feedback').text(message);
 		    },
-		    getStatus: function() {
+		    getStatus: function(type) {
 		    	//set status
-				if(this.overview.danger > 0) {
-					return 'danger';
-				}
-				if(this.overview.warning > 0 || this.overview.fever > 0) {
-					return 'warning';
-				}
-				if(this.overview.total === this.overview.health) {
-					return 'success';
-				}
+		    	switch(type) {
+		    		case 'total': 
+			    		if(this.overview.danger > 0) {
+							return 'status-bg-danger';
+						}
+						if(this.overview.warning > 0 || this.overview.fever > 0) {
+							return 'status-bg-warning';
+						}
+						if(this.overview.total === this.overview.health) {
+							return 'status-bg-success';
+						}
+		    		break;
+		    		case 'fever': 
+		    			if(this.overview.fever === 0 ) {
+		    				return 'status-bg-success';
+		    			} else {
+		    				//todo
+		    			}
+		    		break;
+		    		case 'warning': 
+		    			if(this.overview.total === this.overview.health) {
+		    				return 'status-bg-success';
+		    			} else {
+		    				//todo
+		    			}
+		    		break;
+		    		case 'danger' : 
+		    			if(this.overview.danger > 0) {
+		    				return 'status-bg-danger';
+		    			} else {
+		    				return 'status-bg-success';
+		    			}
+ 		    		break;
+
+ 		    		// status-bg-success
+		    	}
+				
 		    },
 		    login: function() {
 		        // reset 
