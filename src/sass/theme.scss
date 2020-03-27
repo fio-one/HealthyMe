@@ -143,9 +143,9 @@ body {
 }
 
 .num-block {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   &:first-child {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
   }
   .title {
     text-align: left;
@@ -183,21 +183,21 @@ body {
   }
 }
 
-.status-dot {
-  font-size: $m-font;
-  display: inline-block;
-  margin-top: 6px;
-  &.wait {
-    color: $base-color;
-  }
-  &.success {
+.status-dot-area {
+  margin-top: 4px;
+  &.status-success .success {
     color: $success-color;
   }
-  &.warning {
+  &.status-warning .warning {
     color: $warning-color;
   }
-  &.danger {
+  &.status-danger .danger {
     color: $danger-color;
+  }
+  .status-dot {
+    font-size: 10px;
+    display: inline-block;
+    color: #8e8e8f;
   }
 }
 

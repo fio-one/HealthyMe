@@ -3,7 +3,12 @@
 		<p class="title">Number of People Participated Today</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.total" @click="showLog()" :class="getStatus('total')"></p>
+				<p class="num" v-text="overview.total" @click="showLog()"></p>
+				<div class="status-dot-area text-right" :class="getStatus('total')">
+					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
+					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
+					<span class="status-dot success"><i class="fas fa-circle"></i></span>
+				</div>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<a href="#" target="_blank">
@@ -17,7 +22,12 @@
 		<p class="title">Number of Healthy People</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.health" @click="showLog()" :class="getStatus('total')"></p>
+				<p class="num" v-text="overview.health" @click="showLog()"></p>
+				<div class="status-dot-area text-right" :class="getStatus('total')">
+					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
+					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
+					<span class="status-dot success"><i class="fas fa-circle"></i></span>
+				</div>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.health, overview.total)" @click="showLog()"></p>
@@ -29,7 +39,12 @@
 		<p class="title">People with Fever</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.fever" @click="showLog()" :class="getStatus('fever')"></p>
+				<p class="num" v-text="overview.fever" @click="showLog()"></p>
+				<div class="status-dot-area text-right" :class="getStatus('fever')">
+					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
+					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
+					<span class="status-dot success"><i class="fas fa-circle"></i></span>
+				</div>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.fever, overview.total)" @click="showLog()"></p>
@@ -41,7 +56,12 @@
 		<p class="title">People with One or Two Symptoms</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.warning" @click="showLog()" :class="getStatus('warning')"></p>
+				<p class="num" v-text="overview.warning" @click="showLog()"></p>
+				<div class="status-dot-area text-right" :class="getStatus('warning')">
+					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
+					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
+					<span class="status-dot success"><i class="fas fa-circle"></i></span>
+				</div>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.warning, overview.total)" @click="showLog()"></p>
@@ -53,7 +73,12 @@
 		<p class="title">People with More than Three Symptoms</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
-				<p class="num" v-text="overview.danger" @click="showLog()" :class="getStatus('danger')"></p>
+				<p class="num" v-text="overview.danger" @click="showLog()"></p>
+				<div class="status-dot-area text-right" :class="getStatus('danger')">
+					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
+					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
+					<span class="status-dot success"><i class="fas fa-circle"></i></span>
+				</div>
 			</div>
 			<div class="col-md-3 col-xs-6">
 				<p class="num percent" v-text="toPercent(overview.danger, overview.total)" @click="showLog()"></p>

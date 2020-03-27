@@ -95,42 +95,42 @@ window.addEventListener('load', function () {
 		    	switch(type) {
 		    		case 'total': 
 			    		if(this.overview.danger > 0) {
-							return 'status-bg-danger';
+							return 'status-danger';
 						}
 						if(this.overview.warning > 0 || this.overview.fever > 0) {
-							return 'status-bg-warning';
+							return 'status-warning';
 						}
 						if(this.overview.total === this.overview.health) {
-							return 'status-bg-success';
+							return 'status-success';
 						}
 		    		break;
 		    		case 'fever': 
 		    			if(this.overview.fever === 0 ) {
-		    				return 'status-bg-success';
+		    				return 'status-success';
 		    			} else {
 		    				if(this.overview.fever > 1) {
-								return 'status-bg-danger';
+								return 'status-danger';
 							} else {
-								return 'status-bg-warning';
+								return 'status-warning';
 							}
 		    			}
 		    		break;
 		    		case 'warning': 
 		    			if(this.overview.total === this.overview.health) {
-		    				return 'status-bg-success';
+		    				return 'status-success';
 		    			} else {
 		    				if(this.overview.warning > 1) {
-								return 'status-bg-danger';
+								return 'status-danger';
 							} else {
-								return 'status-bg-warning';
+								return 'status-warning';
 							}
 		    			}
 		    		break;
 		    		case 'danger' : 
 		    			if(this.overview.danger > 0) {
-		    				return 'status-bg-danger';
+		    				return 'status-danger';
 		    			} else {
-		    				return 'status-bg-success';
+		    				return 'status-success';
 		    			}
  		    		break;
 
