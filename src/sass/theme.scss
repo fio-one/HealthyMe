@@ -72,16 +72,15 @@ body {
 .content-container {
   margin-left: 42vw;
   min-height: 100vh;
-  padding: 0 70px;
   .content-container-inner {
-    padding-top: 90px;
-    min-height: calc(100vh - 90px);
+    padding: 140px 60px 60px 60px;
+    min-height: calc(100vh - 140px);
   }
 }
 
 .toolbar {
   position: fixed;
-  padding: 12px 0;
+  padding: 40px 60px;
   width: 48%;
   background: #f7f5ec;
   .logo {
@@ -89,7 +88,6 @@ body {
     height: 60px;
   }
 }
-
 
 .sidebar-container {
   position: fixed;
@@ -145,6 +143,10 @@ body {
 }
 
 .num-block {
+  margin-bottom: 15px;
+  &:first-child {
+    margin-bottom: 35px;
+  }
   .title {
     text-align: left;
     margin-bottom: 8px;
@@ -165,16 +167,6 @@ body {
     font-weight: bold;
     color: #68808c;
     cursor: pointer;
-    //status-bg
-    &.status-bg-success {
-      background: rgba($success-color, .2);
-    }
-    &.status-bg-warning {
-      background: rgba($warning-color, .2);
-    }
-    &.status-bg-danger {
-      background: rgba($danger-color, .2);
-    }
 
     &:hover {
       text-decoration: underline;
@@ -188,6 +180,24 @@ body {
     &:hover {
       color: $base-color;
     }
+  }
+}
+
+.status-dot {
+  font-size: $m-font;
+  display: inline-block;
+  margin-top: 6px;
+  &.wait {
+    color: $base-color;
+  }
+  &.success {
+    color: $success-color;
+  }
+  &.warning {
+    color: $warning-color;
+  }
+  &.danger {
+    color: $danger-color;
   }
 }
 
@@ -255,7 +265,7 @@ body {
     }
   }
   .submit-area {
-    margin: 16px auto;
+    margin-top: 30px;
     text-align: center;
   }
 }

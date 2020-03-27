@@ -108,14 +108,22 @@ window.addEventListener('load', function () {
 		    			if(this.overview.fever === 0 ) {
 		    				return 'status-bg-success';
 		    			} else {
-		    				//todo
+		    				if(this.overview.fever > 1) {
+								return 'status-bg-danger';
+							} else {
+								return 'status-bg-warning';
+							}
 		    			}
 		    		break;
 		    		case 'warning': 
 		    			if(this.overview.total === this.overview.health) {
 		    				return 'status-bg-success';
 		    			} else {
-		    				//todo
+		    				if(this.overview.warning > 1) {
+								return 'status-bg-danger';
+							} else {
+								return 'status-bg-warning';
+							}
 		    			}
 		    		break;
 		    		case 'danger' : 
