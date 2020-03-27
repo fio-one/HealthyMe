@@ -19,7 +19,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-cookies@1.7.0/vue-cookies.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script><link href="styles.css?v=1585220719" rel="stylesheet"><script type="text/javascript" src="js/bundle.js"></script></head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script><link href="styles.css?v=1585275186" rel="stylesheet"><script type="text/javascript" src="js/bundle.js"></script></head>
 <body class="lang-en"><div id="vue" class="row page-container">
 	<div class="col-md-5 center-flexbox sidebar-container"><div class="inner">
 	<div class="info-block">
@@ -40,24 +40,23 @@
 </div></div>	<div class="col-md-7 content-container first-xs">
 		<div class="toolbar clearfix">
 			<a class="link-text float-right" @click="logout()" v-if="page == 'dashboard' || page == 'log'">Logout</a>
-			<img class="logo" src="image/logo.png">
+			<img class="logo" src="image/logo.png?=1">
 		</div>
 		<div class="center-flexbox content-container-inner" v-if="page === 'login'">
-    <div class="row center-xs"><div class="col-md-12 auth-form">
+    <div class="row center-xs auth-form"><div class="col-md-12 auth-form-inner">
         <div id="form-group-username" class="form-group">
           <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require @keyup.enter="login"/>
           <div class="invalid-feedback text-right"></div>
         </div>
         <div class="clearfix">
             <a href="#" class="text-link text-right float-right" @click="goPage('register')">No account? Register here</a>
-            <a href="#" class="text-link text-left float-left">Forgot Password</a>
         </div>
         <div class="submit-area">
             <button class="btn btn-primary submit-btn" type="button" @click="login()">Login</button>
         </div>
     </div></div>
 </div>		<div class="center-flexbox content-container-inner" v-if="page === 'register'">
-    <div class="row center-xs"><div class="col-md-12 register-form">
+    <div class="row center-xs register-form"><div class="col-md-12 register-form-inner">
         <div class="form-group" id="form-group-name">
           <input class="form-control" type="text" placeholder="Name/Company Name" require v-model="apply.name"/>
           <div class="invalid-feedback text-right"></div>
