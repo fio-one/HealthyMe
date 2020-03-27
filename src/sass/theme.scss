@@ -224,6 +224,7 @@ body {
     width: 93%;
   }
   &.is-invalid {
+    margin-bottom: 20px;
     .form-control {
       border-color: $danger-color;
     }
@@ -239,6 +240,7 @@ body {
 }
 
 .auth-form, .register-form {
+  width: 80%;
   .help-text {
     font-size: $xs-font;
     color: $base-color;
