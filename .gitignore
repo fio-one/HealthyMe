@@ -1,4 +1,5 @@
 # Mac OS X Desktop Services Store
+*.DS_Store
 .DS_Store
 
 # Build Folders
@@ -9,4 +10,4 @@
 composer.lock
 
 # Node JS Folder
-node_modules/
+/node_modules/
