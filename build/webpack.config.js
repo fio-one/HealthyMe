@@ -44,12 +44,6 @@ module.exports = {
             _: 'underscore',
         }),
         new HtmlWebpackPlugin({
-            template: path.join(projectRoot, 'src/login.twig'),
-            filename: 'login.html',
-            inject: 'head',
-            data: enData
-        }),
-        new HtmlWebpackPlugin({
             template: path.join(projectRoot, 'src/index.twig'),
             filename: 'index.html',
             inject: 'head',

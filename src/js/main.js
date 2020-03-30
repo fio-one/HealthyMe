@@ -11,7 +11,6 @@ function validateEmail(email) {
 
 var data = {
 	username: '',
-	token: '',
 	page: '',
 	apply: {
 		'name': '',
@@ -63,12 +62,20 @@ window.addEventListener('load', function () {
 		el: '#vue',
 		data: data,
 		mounted: function() {
-			var c = this.$cookies.get('fio_health');
-		    if(c !== null) {
-		    	this.page = 'dashboard';
-		    } else {
-		    	this.page = 'login';
-		    }
+			axios.get('https://alpha.fio.one/healthyme/', {}).then(function (result) {
+			    console.log(result);
+
+			    vue.setCookie(result);
+			    data.page = 'dashboard';
+			}).catch(function (error) {
+				console.log(error);
+			  	data.page = 'login';
+			});
+
+		 	// var c = this.$cookies.get('fio_health');
+		  //   if(c !== null) {
+		  //   	this.page = 'dashboard';
+		  //   }
 		},
 		methods: {
 			goPage: function(page) {
@@ -81,6 +88,12 @@ window.addEventListener('load', function () {
 					var n = (num * 100) / total;
 					return Math.round(n) + '%';
 				}
+	        },
+	        setCookie: function(data) {
+	        	this.$cookies.set('fio_health', {
+					// 'login': data.username,
+					'token': 1
+				}, '1d');
 	        },
 		    resetErrorMessage: function(id) {
 		        $(id).removeClass('is-invalid is-valid')
@@ -133,8 +146,6 @@ window.addEventListener('load', function () {
 		    				return 'status-success';
 		    			}
  		    		break;
-
- 		    		// status-bg-success
 		    	}
 				
 		    },
@@ -213,29 +224,28 @@ window.addEventListener('load', function () {
 				}
 
 				if(validate) {
-					console.log(200);
-
-					///set cookie
-					this.$cookies.set('fio_health', {
-						'login': this.username,
-						'token': 1
-					}, '1d');
-
-					alert('login success.');
-					vue.goPage('dashboard');
-
-					//todo: api
-				    // api('/login', data, function(result) {
-				    // }, function(result){
-				    //     vue.setErrorMessage('#form-group-username', result.data.message);
-				    // });
+					axios.post('https://alpha.fio.one/healthyme/login', {'username': this.username}).then(function (result) {
+						if (result.data.code == 0) {
+							alert('We send an email include a magic link for logging.\nPlease check your email.');
+						} else {
+							alert(result.data.message);
+						}
+					}).catch(function (error) {
+						console.log(error);
+					});
 				}
 		    },
+		    validate: function () {
+		    	console.log('token');
+		    },
 		    logout: function() {
-		    	this.$cookies.remove('fio_health');
-		    	this.username = '';
-		    	this.token = '';
-		    	vue.goPage('login');
+			    axios.get('https://alpha.fio.one/healthyme/logout', {}).then(function (result) {
+				    vue.$cookies.remove('fio_health');
+				    data.username = '';
+			    	vue.goPage('login');
+				}).catch(function (error) {
+					console.log(error);
+				});
 		    },
 		    showLog: function() {
 		    	vue.goPage('log');
