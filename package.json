@@ -10,7 +10,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "serve": "^11.3.0"
+  },
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.16",
     "copy-webpack-plugin": "^5.1.1",
