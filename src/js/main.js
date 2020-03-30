@@ -65,7 +65,7 @@ window.addEventListener('load', function () {
 			axios.get('https://alpha.fio.one/healthyme/', {}).then(function (result) {
 			    console.log(result);
 
-			    vue.setCookie(result);
+			    // vue.setCookie(result);
 			    data.page = 'dashboard';
 			}).catch(function (error) {
 				console.log(error);
