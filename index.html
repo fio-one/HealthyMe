@@ -19,9 +19,9 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/vue-cookies@1.7.0/vue-cookies.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script><link href="styles.css?v=1585313769" rel="stylesheet"><script type="text/javascript" src="js/bundle.js"></script></head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script><link href="styles.css?v=1585551701" rel="stylesheet"><script type="text/javascript" src="js/bundle.js"></script></head>
 <body class="lang-en"><div id="vue" class="row page-container">
-	<div class="col-md-5 center-flexbox sidebar-container"><div class="inner">
+	<div class="col-md-5 col-sm-12 col-xs-12 center-flexbox sidebar-container"><div class="inner">
 	<div class="info-block">
 		<p>Call 911 if you have a medical emergency: If you have a medical emergency and need to call 911, notify the operator that you have or think you might have, COVID-19. If possible, put on a facemask before medical help arrives.<a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html" target="_blank">CDC website</a></p>
 	</div>
@@ -37,13 +37,13 @@
 			</ul>
 		</div>
 	</div>
-</div></div>	<div class="col-md-7 content-container first-xs">
+</div></div>	<div class="col-md-7 col-sm-12 col-xs-12 content-container first-xs">
 		<div class="toolbar clearfix">
 			<a class="link-text float-right" @click="logout()" v-if="page == 'dashboard' || page == 'log'">Logout</a>
 			<img class="logo" src="image/logo.png?=1">
 		</div>
 		<div class="center-flexbox content-container-inner" v-if="page === 'login'">
-    <div class="row center-xs auth-form"><div class="col-md-12 auth-form-inner">
+    <div class="row center-xs auth-form"><div class="col-md-12 col-sm-8 col-xs-12 auth-form-inner">
         <div id="form-group-username" class="form-group">
           <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require @keyup.enter="login"/>
           <div class="invalid-feedback text-right"></div>
@@ -56,7 +56,7 @@
         </div>
     </div></div>
 </div>		<div class="center-flexbox content-container-inner" v-if="page === 'register'">
-    <div class="row center-xs register-form"><div class="col-md-12 register-form-inner">
+    <div class="row center-xs register-form"><div class="col-md-12 col-sm-8 col-xs-12 register-form-inner">
         <div class="form-group" id="form-group-name">
           <input class="form-control" type="text" placeholder="Name/Company Name" require v-model="apply.name"/>
           <div class="invalid-feedback text-right"></div>
@@ -104,15 +104,15 @@
         </div>
     </div></div>
 </div>		<div class="content-container-inner" v-if="page === 'dashboard'"><div class="row center-xs">
-	<div class="col-md-12 col-xs-12 num-block">
+	<div class="col-md-12 col-sm-10 col-xs-12 num-block">
 		<p class="title">Number of People Participated Today</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
 				<p class="num" v-text="overview.total" @click="showLog()"></p>
 				<div class="status-dot-area text-right" :class="getStatus('total')">
-					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
-					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
 					<span class="status-dot success"><i class="fas fa-circle"></i></span>
+					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
+					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
 				</div>
 			</div>
 			<div class="col-md-3 col-xs-6">
@@ -123,15 +123,15 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-12 col-xs-12 num-block">
+	<div class="col-md-12 col-sm-10 col-xs-12 num-block">
 		<p class="title">Number of Healthy People</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
 				<p class="num" v-text="overview.health" @click="showLog()"></p>
 				<div class="status-dot-area text-right" :class="getStatus('total')">
-					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
-					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
 					<span class="status-dot success"><i class="fas fa-circle"></i></span>
+					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
+					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
 				</div>
 			</div>
 			<div class="col-md-3 col-xs-6">
@@ -140,15 +140,15 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-12 col-xs-12 num-block">
+	<div class="col-md-12 col-sm-10 col-xs-12 num-block">
 		<p class="title">People with Fever</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
 				<p class="num" v-text="overview.fever" @click="showLog()"></p>
 				<div class="status-dot-area text-right" :class="getStatus('fever')">
-					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
-					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
 					<span class="status-dot success"><i class="fas fa-circle"></i></span>
+					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
+					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
 				</div>
 			</div>
 			<div class="col-md-3 col-xs-6">
@@ -157,15 +157,15 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-12 col-xs-12 num-block">
+	<div class="col-md-12 col-sm-10 col-xs-12 num-block">
 		<p class="title">People with One or Two Symptoms</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
 				<p class="num" v-text="overview.warning" @click="showLog()"></p>
 				<div class="status-dot-area text-right" :class="getStatus('warning')">
-					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
-					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
 					<span class="status-dot success"><i class="fas fa-circle"></i></span>
+					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
+					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
 				</div>
 			</div>
 			<div class="col-md-3 col-xs-6">
@@ -174,15 +174,15 @@
 			</div>
 		</div>
 	</div>
-	<div class="col-md-12 col-xs-12 num-block">
+	<div class="col-md-12 col-sm-10 col-xs-12 num-block">
 		<p class="title">People with More than Three Symptoms</p>
 		<div class="row between-xs">
 			<div class="col-md-8 col-xs-6">
 				<p class="num" v-text="overview.danger" @click="showLog()"></p>
 				<div class="status-dot-area text-right" :class="getStatus('danger')">
-					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
-					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
 					<span class="status-dot success"><i class="fas fa-circle"></i></span>
+					<span class="status-dot warning"><i class="fas fa-circle"></i></span>
+					<span class="status-dot danger"><i class="fas fa-circle"></i></span>
 				</div>
 			</div>
 			<div class="col-md-3 col-xs-6">
@@ -192,7 +192,7 @@
 		</div>
 	</div>
 </div></div>		<div class="content-container-inner" v-if="page === 'log'">
-	<div class="row"><div class="col-md-12">
+	<div class="row"><div class="col-md-12 col-sm-12 col-xs-12">
 		<button class="btn" @click="goPage('dashboard')">Back</button>
 		<div class="table-responsive"><table>
 			<thead><tr>
@@ -219,7 +219,7 @@
 		</table></div>
 	</div></div>
 </div>	</div>
-	
+
 	
 </div></body>
 </html>
