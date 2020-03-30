@@ -9,5 +9,8 @@
 # Composer Lock File
 composer.lock
 
+# Npm Lock File
+**/package-lock.json
+
 # Node JS Folder
 /node_modules/
