@@ -3,7 +3,7 @@
 
 # Build Folders
 /[Dd]ist/
-/[Dd]ist/.gitkeep
+!/[Dd]ist/.gitkeep
 
 # Composer Lock File
 composer.lock
