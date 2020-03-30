@@ -18,7 +18,7 @@ Once the Repository has been cloned into your workstation, here are the steps to
 npm install
 ```
 
-## Run Development Server Locally
+### Run Development Server Locally
 
 ```sh
 npm run dev
