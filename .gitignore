@@ -16,3 +16,6 @@ composer.lock
 
 # Node JS Folder
 /node_modules/
+
+# Visual Studio Code Workspace Settings
+.vscode
