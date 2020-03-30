@@ -6,7 +6,8 @@
   "scripts": {
     "clean": "rm -rf dist/*",
     "dev": "NODE_ENV=dev webpack-dev-server --progress --config build/webpack.config.dev.js",
-    "build": "NODE_ENV=production webpack -p --progress --config build/webpack.config.build.js"
+    "build": "NODE_ENV=production webpack -p --progress --config build/webpack.config.build.js",
+    "serve": "serve -s dist"
   },
   "author": "",
   "license": "ISC",
