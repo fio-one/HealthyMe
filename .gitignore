@@ -12,5 +12,8 @@ composer.lock
 # Npm Lock File
 **/package-lock.json
 
+# Yarn Lock File
+**/yarn.lock
+
 # Node JS Folder
 /node_modules/
