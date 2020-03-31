@@ -11,7 +11,7 @@ function validateEmail(email) {
 
 var data = {
 	username: '',
-	page: '',
+	page: 'welcome',
 	apply: {
 		'name': '',
 		'email': '',
@@ -58,20 +58,20 @@ var data = {
 
 window.addEventListener('load', function () {
 	$('#year').text(new Date().getFullYear());
-	
+
     var vue = new Vue({
 		el: '#vue',
 		data: data,
 		mounted: function() {
-			axios.get('https://alpha.fio.one/healthyme/', {}).then(function (result) {
-			    console.log(result);
+			// axios.get('https://alpha.fio.one/healthyme/', {}).then(function (result) {
+			//     console.log(result);
 
-			    // vue.setCookie(result);
-			    data.page = 'dashboard';
-			}).catch(function (error) {
-				console.log(error);
-			  	data.page = 'login';
-			});
+			//     // vue.setCookie(result);
+			//     data.page = 'dashboard';
+			// }).catch(function (error) {
+			// 	console.log(error);
+			//   	data.page = 'login';
+			// });
 
 		 	// var c = this.$cookies.get('fio_health');
 		  //   if(c !== null) {

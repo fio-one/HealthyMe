@@ -290,10 +290,10 @@ body {
 
 .btn-primary {
   @extend .btn;
-  background: $primary-color;
-  border: 1px solid $primary-color;
+  background: #1998a4;
+  border: 1px solid #1998a4;
   &:hover {
-    background: rgba($primary-color, .8);
+    background: rgba(#1998a4, .8);
   }
 }
 .btn-success {
@@ -386,6 +386,25 @@ body {
         border-bottom: solid 1px #cfcfd0;
         padding: 20px 16px;
       }
+  }
+}
+
+.welcome-container {
+  p {
+    color: #92b4c5;
+    margin-bottom: 16px;
+    font-size: $xl-font;
+    padding: 0 30px;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 0;
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 

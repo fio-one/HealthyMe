@@ -66,6 +66,16 @@
 	  }
 	}
 
+	.welcome-container {
+	  p {
+	    margin-bottom: 25px;
+	    font-size: $l-font;
+	  }
+	  .btn {
+	    margin-bottom: 25px;
+	  }
+	}
+
 	.about-cover {
 	  nav {
 	    margin: 4px 12px;
@@ -81,7 +91,6 @@
 	    font-size: $l-font;
 	  }
 	}
-
 	.about-container {
 		margin-top: 0;
 		padding: 45px 30px;
