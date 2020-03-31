@@ -20,7 +20,7 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/vue-cookies@1.7.0/vue-cookies.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script><link href="styles.css?v=1585637280" rel="stylesheet"><script type="text/javascript" src="js/bundle.js"></script></head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script><link href="styles.css?v=1585644015" rel="stylesheet"><script type="text/javascript" src="js/bundle.js"></script></head>
 <body class="lang-en"><div id="vue" class="row page-container">
 	<div class="col-md-5 col-sm-12 col-xs-12 center-flexbox sidebar-container"><div class="inner">
 	<div class="info-block">
@@ -43,7 +43,12 @@
 			<a class="link-text float-right" @click="logout()" v-if="page == 'dashboard' || page == 'log'">Logout</a>
 			<img class="logo" src="image/logo.png?=1">
 		</div>
-		<div class="center-flexbox content-container-inner" v-if="page === 'login'">
+		<div class="center-flexbox content-container-inner" v-if="page === 'welcome'"><div class="welcome-container">
+    <p>Welcome to HealthyMe</p>
+    <button class="btn btn-primary" @click="goPage('login')">Login</button>
+    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfiYPLRkHDFmqsXmgiEaOU1PIyRsbPwE15pQTfvQ9JEx8r5-Q/viewform" target="_blank">Apply for Business Use</a>
+    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScCctBpFzJRywUN5lh3d2sGe0mCkJwmuCdiLms7my_HgOqG1w/viewform" target="_blank">Apply for Personal Use</a>
+</div></div>		<div class="center-flexbox content-container-inner" v-if="page === 'login'">
     <div class="row center-xs auth-form"><div class="col-md-12 col-sm-8 col-xs-12 auth-form-inner">
         <div id="form-group-username" class="form-group">
           <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require @keyup.enter="login"/>
@@ -220,7 +225,5 @@
 		</table></div>
 	</div></div>
 </div>	</div>
-
-	
 </div></body>
 </html>
