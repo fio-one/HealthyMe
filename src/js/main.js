@@ -118,7 +118,7 @@ window.addEventListener('load', function () {
 					logTitle: 'Init',
 					hookSuccess: function(aio_data) {
 						if (typeof aio_data.username === 'undefined')
-							return data.page = 'login';
+							return data.page = 'welcome';
 
 						// user logined
 						vue_data.user = {username: aio_data.username};
