@@ -37,6 +37,10 @@
 
 	.num-block {
 		margin-bottom: 16px;
+		.sheet-link {
+		    padding: 16px 0;
+		    font-size: $s-font;
+		}
 	}
 
 	//table
