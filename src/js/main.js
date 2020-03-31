@@ -58,7 +58,8 @@ var data = {
 
 window.addEventListener('load', function () {
 	$('#year').text(new Date().getFullYear());
-   var vue = new Vue({
+	
+    var vue = new Vue({
 		el: '#vue',
 		data: data,
 		mounted: function() {
