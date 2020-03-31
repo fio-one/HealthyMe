@@ -55,6 +55,10 @@ body {
   &.lang-ch {
     font-family: 'Noto Sans TC', sans-serif;
   }
+  &.about {
+    background: #FFF;
+    color: #5f7580;
+  }
 }
 
 .center-flexbox {
@@ -141,7 +145,6 @@ body {
     height: auto;
   }
 }
-
 .num-block {
   margin-bottom: 10px;
   &:first-child {
@@ -386,14 +389,112 @@ body {
   }
 }
 
-
-.block-title {
-  font-size: $xl-font;
-  font-weight: bold;
-  margin: 8px 0;
+.about-cover {
+  background-size: cover;
+  background: transparent url(../image/about-bg.jpeg) scroll no-repeat 50% 50%;
+  nav {
+    margin: 8px 24px;
+  }
 }
-.block-info {
-  font-size: $m-font;
+.about-cover-inner {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  width: 65%;
+  font-size: $l-font;
+  color: #FFF;
+  .logo {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #FFF;
+  }
+
+  h3 {
+    font-size: $xl-font;
+    margin-bottom: 30px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+}
+.about-container {
+  margin-top: -60px;
+  padding: 0 90px;
+  position: relative;
+  
+  .printscreen {
+    width: 80%;
+    margin: 0 auto 15px auto;
+    display: block;
+  }
+
+  .block {
+    margin-bottom: 40px;
+    font-size: $l-font;
+    &:first-child {
+      margin-top: 120px;
+    }
+    .title {
+      color: #30a053;
+      font-size: $xl-font;
+      font-weight: bold;
+    }
+    a {
+      font-size: $m-font;
+      color: #e33c0b;
+      &:hover {
+        color: #e33c0b;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &:before, &:after {
+    content: " ";
+    border-top: 1px solid #30a053;
+    position: absolute;
+    top: 90px;
+    height: calc(100% - 120px);
+    width: 30px;
+  }
+
+  &:before {
+    left: 30px;
+    border-right: 1px solid #30a053;
+  }
+  &:after {
+    right: 30px;
+    border-left: 1px solid #30a053;
+  }
+}
+
+footer {
+  width: 100%;
+  .inner {
+    color: #566a74;
+    background: #8cb8e3;
+    padding: 20px 45px;
+  }
+  a {
+    color: #566a74;
+    display: inline-block;
+    &:hover {
+      text-decoration: underline;
+      color: #566a74;
+    }
+  }
+  .link-group-block {
+    margin-top: 0px;
+    li {
+      margin-left: 12px;
+    }
+    a {
+      color: #314651;
+      font-size: $xxl-font;
+      &:hover {
+        color: rgba(#314651, .8);
+      }
+    }
+  }
 }
 
 @import "mobile";

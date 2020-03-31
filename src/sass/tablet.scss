@@ -55,6 +55,48 @@
 	      }
 	  }
 	}
+
+	.about-cover {
+	  nav {
+	    margin: 8px 12px;
+	  }
+	}
+	.about-cover-inner {
+	  width: 80%;
+	  font-size: $m-font;
+	  h3 {
+	    font-size: $l-font;
+	  }
+	}
+
+	.about-container {
+		margin-top: 0;
+		padding: 45px;
+		position: static;
+	  
+		.printscreen {
+			margin-bottom: 30px;
+		}
+
+		.block {
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&:before, &:after {
+			display: none;
+		}
+	}
+
+	footer {
+	  .inner {
+	    padding: 16px 30px;
+	  }
+	}
 }
 
 /* Landscape */

@@ -7,7 +7,6 @@
 		display: none !important;
 	}
 
-
 	.content-container {
 	  margin-left: 0;
 	  min-height: 70vh;
@@ -67,6 +66,60 @@
 	  }
 	}
 
+	.about-cover {
+	  nav {
+	    margin: 4px 12px;
+	  }
+	}
+	.about-cover-inner {
+	  padding-top: 20px;
+	  padding-bottom: 40px;
+	  width: 80%;
+	  font-size: $m-font;
+
+	  h3 {
+	    font-size: $l-font;
+	  }
+	}
+
+	.about-container {
+		margin-top: 0;
+		padding: 45px 30px;
+		position: static;
+	  
+		.printscreen {
+			width: 90%;
+			margin-bottom: 30px;
+		}
+
+		.block {
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&:before, &:after {
+			display: none;
+		}
+	}
+
+	footer {
+	  .inner {
+	    padding: 16px 30px;
+	  }
+	  .link-group-block {
+	    margin-top: 0px;
+	    li {
+	      margin-left: 8px;
+	    }
+	    a {;
+	      font-size: $xl-font;
+	    }
+	  }
+	}
 }
 
 /* Landscape */

@@ -11,15 +11,12 @@ const IS_DEV = (process.env.NODE_ENV === 'dev');
 const imgPath = (IS_DEV === true) ? '/src/image/' : 'image/';
 
 var version = new Date().getTime()/1000|0;
-var enData = require(path.join(projectRoot, 'src/data/en.json'));
-// var chData = require(path.join(projectRoot, 'src/data/ch.json'));
+var data = require(path.join(projectRoot, 'src/data/en.json'));
 if (IS_DEV !== true) {
-    enData.imgPath = "image/";
-    // chData.imgPath = "image/";
+    data.imgPath = "image/";
 }
 // delete json cache
 delete require.cache[require.resolve(path.join(projectRoot, 'src/data/en.json'))];
-// delete require.cache[require.resolve(path.join(projectRoot, 'src/data/ch.json'))];
 
 module.exports = {
     entry: {
@@ -47,15 +44,14 @@ module.exports = {
             template: path.join(projectRoot, 'src/index.twig'),
             filename: 'index.html',
             inject: 'head',
-            data: enData
+            data: data
         }),
-        //ch
-        // new HtmlWebpackPlugin({
-        //     template: path.join(projectRoot, 'src/index.twig'),
-        //     filename: 'index-ch.html',
-        //     inject: 'head',
-        //     data: chData
-        // }),
+        new HtmlWebpackPlugin({
+            template: path.join(projectRoot, 'src/about.twig'),
+            filename: 'about.html',
+            inject: 'head',
+            data: data
+        }),
         new CopyWebpackPlugin([
             {
                 from: path.join(dirSrc, 'image'),
