@@ -3,10 +3,10 @@
 	"distPath": "/",
     "lang": "en",
     "meta": {
-    	"title": "FiO Helath",
-    	"description": "",
-        "fbid": "",
-        "url": "",
-        "image": ""
+    	"title": "HealthyMe",
+    	"description": "The Minimal Health Management and Alert System",
+        "fbid": "550997432104869",
+        "url": "https://healthyme.fio.one/",
+        "image": "https://healthyme.fio.one/image/og.png"
     }
 }

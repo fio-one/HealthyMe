@@ -12,7 +12,7 @@ function validateEmail(email) {
 var data = {
 	user: undefined,
 	username: '',
-	page: 'welcome',
+	page: 'login',
 	apply: {
 		'name': '',
 		'email': '',
@@ -118,7 +118,7 @@ window.addEventListener('load', function () {
 					logTitle: 'Init',
 					hookSuccess: function(aio_data) {
 						if (typeof aio_data.username === 'undefined')
-							return data.page = 'welcome';
+							return data.page = 'login';
 
 						// user logined
 						vue_data.user = {username: aio_data.username};
@@ -143,14 +143,8 @@ window.addEventListener('load', function () {
 					return Math.round(n) + '%';
 				}
 			},
-			//setCookie: function(data) {
-			//	this.$cookies.set('fio_health', {
-			//		// 'login': data.username,
-			//		'token': 1
-			//	}, '1d');
-			//},
 			resetErrorMessage: function(id) {
-				$(id).removeClass('is-invalid is-valid')
+				$(id).find('.form-group').removeClass('is-invalid is-valid')
 					.find('.invalid-feedback').text('');
 			},
 			setErrorMessage: function(id, message) {
@@ -201,7 +195,6 @@ window.addEventListener('load', function () {
 						}
 						break;
 				}
-
 			},
 			register: function() {
 				// reset
@@ -251,14 +244,7 @@ window.addEventListener('load', function () {
 
 				if(validate) {
 					console.log(200);
-
-					//todo: clear form
-					alert('register success.');
-					// vue.goPage('login');
-					// api('/register', data, function(result) {
-					// }, function(result){
-					//		 vue.setErrorMessage('#form-group-username', result.data.message);
-					// });
+					vue.goPage('login');
 				}
 			},
 			login: function() {

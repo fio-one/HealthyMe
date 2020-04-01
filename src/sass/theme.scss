@@ -74,10 +74,11 @@ body {
 }
 
 .content-container {
-  margin-left: 42vw;
+  margin-left: 41.6vw;
   min-height: 100vh;
   .content-container-inner {
-    padding: 140px 60px 60px 60px;
+    box-sizing: border-box;
+    padding: 140px 45px 0 45px;
     min-height: calc(100vh - 140px);
   }
 }
@@ -231,7 +232,7 @@ body {
     @include border-radius(5px);
     padding: 8px 12px;
     line-height: 30px;
-    border: 1px solid $base-color;
+    border: 1px solid #008ec7;
     background: #FFF;
     color: $base-color;
     width: 93%;
@@ -254,10 +255,17 @@ body {
 
 .auth-form, .register-form {
   width: 80%;
+  .title {
+    color: #92b4c5;
+    font-weight: bold;
+    font-size: $xl-font;
+    margin-bottom: 24px;
+  }
   .help-text {
-    font-size: $xs-font;
-    color: $base-color;
-    margin-top: 4px;
+    margin-top: 10px;
+    font-size: $m-font;
+    color: #708b98;
+    font-weight: bold;
   }
   .text-link {
     font-size: $s-font;
@@ -271,6 +279,22 @@ body {
     margin-top: 30px;
     text-align: center;
   }
+  .register-area {
+    margin-top: 65px;
+    .title {
+      color: #566a74;
+      font-size: $m-font;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .about-link {
+      margin-top: 30px;
+      color: #708b98;
+      font-size: $s-font;
+      text-decoration: underline;
+    }
+  }
+
 }
 
 //button
@@ -389,25 +413,6 @@ body {
   }
 }
 
-.welcome-container {
-  p {
-    color: #92b4c5;
-    margin-bottom: 16px;
-    font-size: $xl-font;
-    padding: 0 30px;
-  }
-  .btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    padding: 12px 0;
-    margin-bottom: 30px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
 .about-cover {
   background-size: cover;
   background: transparent url(../image/about-bg.jpeg) scroll no-repeat 50% 50%;
@@ -441,7 +446,7 @@ body {
   position: relative;
   
   .printscreen {
-    width: 80%;
+    width: 85%;
     margin: 0 auto 15px auto;
     display: block;
   }
@@ -463,6 +468,18 @@ body {
       &:hover {
         color: #e33c0b;
         text-decoration: underline;
+      }
+    }
+    .btn {
+      padding: 8px 24px;
+      display: inline-block;
+      background: #005dab;
+      border: 1px solid #005dab;
+      color: #FFF;
+      &:hover {
+        text-decoration: none;
+        color: #FFF;
+        background: rgba(#005dab, .8);
       }
     }
   }
