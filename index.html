@@ -4,14 +4,14 @@
 	<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
-<title>FiO Helath</title>
-<meta name="description" content=""/>
-<meta property="og:title" content="FiO Helath"/>
+<title>HealthyMe</title>
+<meta name="description" content="The Minimal Health Management and Alert System"/>
+<meta property="og:title" content="HealthyMe"/>
 <meta property="og:type" content="website"/>
-<meta property="og:url" content=""/>
-<meta property="og:image" content=""/>
-<meta property="og:description" content=""/>
-<meta property="fb:app_id" content=""/>	<link href="image/favicon.ico" sizes="any" type="image/svg+xml" rel="icon">
+<meta property="og:url" content="https://healthyme.fio.one/"/>
+<meta property="og:image" content="https://healthyme.fio.one/image/og.png"/>
+<meta property="og:description" content="The Minimal Health Management and Alert System"/>
+<meta property="fb:app_id" content="550997432104869"/>	<link href="image/favicon.ico" sizes="any" type="image/svg+xml" rel="icon">
 <link href="image/favicon.png" rel="shortcut icon">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" rel="stylesheet">
@@ -21,7 +21,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios-jsonp-pro@1.1.7/dist/axios.min.js"></script>
-<link href="styles.css?v=1585651051" rel="stylesheet"><script type="text/javascript" src="js/bundle.js?v=1585651051"></script></head>
+<link href="styles.css?v=1585734097" rel="stylesheet"><script type="text/javascript" src="js/bundle.js?v=1585734097"></script></head>
 <body class="lang-en"><div id="vue" class="row page-container">
 	<div class="col-md-5 col-sm-12 col-xs-12 center-flexbox sidebar-container"><div class="inner">
 	<div class="info-block">
@@ -46,22 +46,24 @@
 			<a class="link-text float-right" @click="logout()" v-if="page == 'dashboard' || page == 'log'">Logout</a>
 			<img class="logo" src="image/logo.png?=1">
 		</div>
-		<div class="center-flexbox content-container-inner" v-if="page === 'welcome'"><div class="welcome-container">
-    <p>Welcome to HealthyMe</p>
-    <button class="btn btn-primary" @click="goPage('login')">Login</button>
-    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfiYPLRkHDFmqsXmgiEaOU1PIyRsbPwE15pQTfvQ9JEx8r5-Q/viewform" target="_blank">Apply for Business Use</a>
-    <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScCctBpFzJRywUN5lh3d2sGe0mCkJwmuCdiLms7my_HgOqG1w/viewform" target="_blank">Apply for Personal Use</a>
-</div></div>		<div class="center-flexbox content-container-inner" v-if="page === 'login'">
+		<div class="center-flexbox content-container-inner" v-if="page === 'login'">
     <div class="row center-xs auth-form"><div class="col-md-12 col-sm-8 col-xs-12 auth-form-inner">
+        <p class="title">Welcome to HealthyMe</p>
         <div id="form-group-username" class="form-group">
-          <input class="form-control" type="text" v-model="username" placeholder="Email" ref="username" require @keyup.enter="login"/>
+          <input class="form-control" type="text" v-model="username" placeholder="Enter your registertd email to request an access link." ref="username" require @keyup.enter="login"/>
+          <p class="help-text">( No Password Required )</p>
           <div class="invalid-feedback text-right"></div>
         </div>
-        <div class="clearfix">
-            <a href="#" class="text-link text-right float-right" @click="goPage('register')">No account? Register here</a>
-        </div>
         <div class="submit-area">
-            <button class="btn btn-primary submit-btn" type="button" @click="login()">Login</button>
+            <button class="btn-primary submit-btn" type="button" @click="login()">Request Access</button>
+        </div>
+        <div class="register-area">
+            <p class="title">Not registered? Join us to fight COVID-19 together</p>
+            <div class="row center-xs"><div class="clearfix col-md-8">
+                <a class="btn-primary float-left" href="https://docs.google.com/forms/d/e/1FAIpQLSfiYPLRkHDFmqsXmgiEaOU1PIyRsbPwE15pQTfvQ9JEx8r5-Q/viewform" target="_blank">Business</a>
+                <a class="btn-primary float-right" href="https://docs.google.com/forms/d/e/1FAIpQLScCctBpFzJRywUN5lh3d2sGe0mCkJwmuCdiLms7my_HgOqG1w/viewform" target="_blank">Personal</a>
+            </div></div>
+            <a class="about-link" href="about.html">About Healthyme</a>
         </div>
     </div></div>
 </div>		<div class="center-flexbox content-container-inner" v-if="page === 'register'">
@@ -109,7 +111,7 @@
           <p class="help-text text-left">Please fill in the Applicant Title / Name in the above field again.</p>
         </div>
         <div class="submit-area">
-            <button class="btn btn-primary submit-btn" type="button" @click="register()">Register</button>
+            <button class="btn-primary submit-btn" type="button" @click="register()">Register</button>
         </div>
     </div></div>
 </div>		<div class="content-container-inner" v-if="page === 'dashboard'"><div class="row center-xs">
