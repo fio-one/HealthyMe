@@ -213,7 +213,7 @@ window.addEventListener('load', function () {
 				} else {
 					if (!validateEmail(this.apply.email)) {
 						validate = false;
-						vue.setErrorMessage('#form-group-email', "Pleaes confirm your email address.");
+						vue.setErrorMessage('#form-group-email', "Please confirm your email address.");
 					}
 				}
 				if(this.apply.email_confirmation === "") {
@@ -222,7 +222,7 @@ window.addEventListener('load', function () {
 				} else {
 					if (!validateEmail(this.apply.email_confirmation)) {
 						validate = false;
-						vue.setErrorMessage('#form-group-email-confirmation', "Pleaes confirm your email address.");
+						vue.setErrorMessage('#form-group-email-confirmation', "Please confirm your email address.");
 					}
 				}
 
@@ -262,7 +262,7 @@ window.addEventListener('load', function () {
 				} else {
 					if (!validateEmail(this.username)) {
 						validate = false;
-						vue.setErrorMessage('#form-group-username', "Pleaes confirm your email address.");
+						vue.setErrorMessage('#form-group-username', "Please confirm your email address.");
 					}
 				}
 				if(!validate) return;
