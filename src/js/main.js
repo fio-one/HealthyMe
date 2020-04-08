@@ -273,7 +273,7 @@ window.addEventListener('load', function () {
 					params: {username: vue_data.username},
 					logTitle: 'Login',
 					hookSuccess: function(aio_data) {
-						alert("We send an email include a magic link for logging.\nPlease check your email.");
+						alert("Thanks! Please check your email account. We've sent you a confirmation link to complete registration and log in.");
 					},
 				});
 			},
