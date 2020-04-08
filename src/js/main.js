@@ -59,11 +59,11 @@ var data = {
 
 var api = {};
 api.jsonp = function({url, params={}, hookSuccess, hookFail, showFailAlert=true, hookCatchError, logTitle='Debug'}) {
-	console.log({params});
+	// console.log({params});
 	return axios.jsonp(
 		url, {params}
 	).then(function(response) {
-		console.log(`[${logTitle}] FiO API response`, response);
+		// console.log(`[${logTitle}] FiO API response`, response);
 		// Msut have: response.code
 		if (typeof response.code === 'undefined') {
 			data.page = 'login';
@@ -78,10 +78,10 @@ api.jsonp = function({url, params={}, hookSuccess, hookFail, showFailAlert=true,
 		}
 
 		// Success: send the data to call back: response.data
-		console.log('response.code === 0');
+		// console.log('response.code === 0');
 		if (hookSuccess) hookSuccess(response.data);
 	}).catch(function(error) {
-		console.log(`[${logTitle}] catch error`, error);
+		// console.log(`[${logTitle}] catch error`, error);
 		if (hookCatchError) hookCatchError(error);
 		alert('Something wrong, please check your network connection and try again.');
 	});
@@ -100,7 +100,7 @@ window.addEventListener('load', function () {
 				let searchParams = new URLSearchParams(window.location.search);
 				let vue_data = this.$data;
 				let params = Object.fromEntries(searchParams.entries());
-				console.log('[Init]', vue_data, params);
+				// console.log('[Init]', vue_data, params);
 				if (params.code) {
 					if (params.code == 1)
 						alert('The magic link is broken! Please get the email magic link again!');
@@ -243,13 +243,13 @@ window.addEventListener('load', function () {
 				}
 
 				if(validate) {
-					console.log(200);
+					// console.log(200);
 					vue.goPage('login');
 				}
 			},
 			login: function() {
 				let vue_data = this.$data;
-				console.log('login', vue_data);
+				// console.log('login', vue_data);
 
 				// reset
 				vue.resetErrorMessage('.auth-form');
@@ -275,10 +275,13 @@ window.addEventListener('load', function () {
 					hookSuccess: function(aio_data) {
 						alert("Thanks! Please check your email account. We've sent you a confirmation link to complete registration and log in.");
 					},
+					hookFail: function(response) {
+						vue.setErrorMessage('#form-group-username', "Email address is not exist. Please confirm your email address or click the button below to apply for use.");
+					}
 				});
 			},
 			validate: function () {
-				console.log('token');
+				// console.log('token');
 			},
 			logout: function() {
 				let vue_data = this.$data;
